@@ -1,9 +1,10 @@
 ---
 import "../styles/style.css";
+const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/tentang">Tentang</a>
-    <a href="/lomba/lomba1">Lomba</a>
+<nav id={idName} class={className}>
+    <a class={className} href="#section-home">Home</a>
+    <a class={className} href="#section-tentang">Tentang</a>
+    <a class={className} href="/lomba/lomba1">Lomba</a>
 </nav>

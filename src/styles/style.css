@@ -1,30 +1,101 @@
+:root {
+    --h1-fz: 6vw;
+    --h2-fz: 2vw;
+    --h4-fz: 3.5vw;
+    --nav-fz: 2vw;
+    --p-fz: 1.5vw;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
 * {
     margin: 0;
     padding: 0;
     background-color: black;
-    border: 1px solid red;
-    font-family: monospace;
     color: white;
+    border: 0.1px solid red;
+    font-family: "Red Hat Display", sans-serif;
+    width: fit-content;
 }
 
 nav {
-    font-size: 1.25vw;
+    font-size: var(--nav-fz);
+    background-color: white;
+    padding: 0.5vw;
     text-align: left;
     position: fixed;
+    width: 98%;
+    margin: 2.5px;
+}
+
+a {
+    background-color: white;
+    color: black;
 }
 
 h1 {
-    font-size: 4.5vw;
+    font-size: var(--h1-fz);
+    font-weight: 900;
 }
 
 h2 {
-    font-size: 3vw;
+    font-size: var(--h2-fz);
 }
 
 h4 {
-    font-size: 2.5vw;
+    font-size: var(--h4-fz);
 }
 
-#section {
-    text-align: center;
+p {
+    font-size: var(--p-fz);
 }
+
+.tentang {
+    text-align: center;
+    align-self: center;
+    color: black;
+    background-color: white;
+}
+
+#section-home {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    background-image:url("../images/foto_sc.jpg");
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section-tentang {
+    color: black;
+    background-color: white;
+}
+
+#sc-pic {
+    width: 10vw;
+    height: 10vw;
+    align-self: center;
+}
+
+#tentang-paragraph {
+    font-size: var(--p-fz);
+    width: 50%;
+}
+
+#tentang-title {
+    width: fit-content;
+}
+
+@media only screen and (max-width: 1025px) {
+    :root {
+        --h1-fz: 10vw;
+        --h2-fz: 5vw;
+        --h4-fz: 8vw;
+        --nav-fz: 5.5vw;
+    }
+    }
