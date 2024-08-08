@@ -8,7 +8,15 @@ function countdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById('countdown-timer').innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+    const daysStr = days.toString().padStart(2, '0');
+    const hoursStr = hours.toString().padStart(2, '0');
+    const minutesStr = minutes.toString().padStart(2, '0');
+    const secondsStr = seconds.toString().padStart(2, '0');
+
+    document.getElementById('days').innerHTML = `${daysStr}`;
+    document.getElementById('hours').innerHTML = `${hoursStr}`;
+    document.getElementById('minutes').innerHTML = `${minutesStr}`;
+    document.getElementById('seconds').innerHTML = `${secondsStr}`;
 
     if (distance < 0) {
         clearInterval(x);

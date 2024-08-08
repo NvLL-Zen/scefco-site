@@ -59,21 +59,47 @@ p {
     background-color: white;
 }
 
+.countdownText {
+    border: 0;
+    width:99%;
+    background-color: transparent;
+    font-family: "Sankofa Display";
+    font-size: 10vw;
+}
+
+.countdownDot {
+    border: 0;
+    background-color: transparent;
+    width: 1%;
+}
+
 #section-home {
     text-align: center;
     align-items: center;
     width: 100%;
-    background-image:url("../images/foto_sc.jpg");
+    background-image:url("../images/fourseasons2.jpeg");
 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    display: flex;
+    flex-direction: row;
 }
 
 #section-tentang {
     color: black;
     background-color: white;
+}
+
+#countdown-timer {
+    font-size: 8.5vw;
+    font-family: "Sankofa Display", sans-serif;
+    word-spacing: 5vw;
+    background-color: transparent;
+    color: white;
+    width: fit-content;
 }
 
 #sc-pic {
@@ -98,4 +124,18 @@ p {
         --h4-fz: 8vw;
         --nav-fz: 5.5vw;
     }
+
+    #section-home {
+        background-attachment: local;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
+}
+
+/* @supports (-webkit-text-stroke: 2px black) {
+    #countdown-timer {
+      -webkit-text-stroke: 2px black;
+      -webkit-text-fill-color: white;
+    }
+} */
