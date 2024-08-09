@@ -13,14 +13,14 @@ function countdown() {
     const minutesStr = minutes.toString().padStart(2, '0');
     const secondsStr = seconds.toString().padStart(2, '0');
 
-    document.getElementById('days').innerHTML = `${daysStr}`;
-    document.getElementById('hours').innerHTML = `${hoursStr}`;
-    document.getElementById('minutes').innerHTML = `${minutesStr}`;
-    document.getElementById('seconds').innerHTML = `${secondsStr}`;
+    document.getElementById('countdown').innerHTML = `${daysStr} : ${hoursStr} : ${minutesStr} : ${secondsStr}`;
+    // document.getElementById('hours').innerHTML = `${hoursStr} :`;
+    // document.getElementById('minutes').innerHTML = `${minutesStr} :`;
+    // document.getElementById('seconds').innerHTML = `${secondsStr}`;
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById('countdown-timer').innerHTML = "The event has started!";
+        document.getElementById('countdown').innerHTML = "The event has started!";
     }
 }
 

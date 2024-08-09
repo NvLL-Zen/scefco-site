@@ -2,25 +2,27 @@
 import Main from "../layouts/main.astro";
 import Section from "../components/section.astro";
 import Nav from "../components/nav.astro";
+import Logo_SC from '../images/logo_sc_putih.jpg'
+import Image from "astro/components/Image.astro";
 import "../styles/style.css";
 ---
 
 <Main>
     <Nav id="nav" />
     <Section id="section-home">
-        <h1 class="countdownText" id="days"></h1>
-        <h1 class="countdownDot">:</h1>
-        <h1 class="countdownText" id="hours"></h1>
-        <h1 class="countdownDot">:</h1>
-        <h1 class="countdownText" id="minutes"></h1>
-        <h1 class="countdownDot">:</h1>
-        <h1 class="countdownText" id="seconds"></h1>
+        <!-- <div id="timer">
+            <h1 class="countdownText" id="days"></h1>
+            <h1 class="countdownText" id="hours"></h1>
+            <h1 class="countdownText" id="minutes"></h1>
+            <h1 class="countdownText" id="seconds"></h1>
+        </div> -->
+        <h1 class="countdownText" id="countdown"></h1>
     </Section>
     <Section id="section-tentang">
-        <div id="sc-pic" class="tentang">(LOGO SC)</div>
-        <h2 id="tentang-title" class="tentang">Tentang Scefco</h1>
+        <Image src={Logo_SC} alt="LOGO SC" id="sc-pic" class="tentang">(LOGO SC)</Image>
+        <h2 id="tentang-title" class="tentang">Tentang Scefco</h2>
         <p id="tentang-paragraph" class="tentang">
-            Scefco adalah event tahunan Sekolah Sinar Cendekia dalam rangka
+            SCEFCO atau SINAR CENDEKIA ESTIVAL and COMPETITION adalah event tahunan Sekolah Sinar Cendekia dalam rangka
             merayakan dan menyambut ulang tahunnya yaitu pada tanggal 11 November
             berupa ajang perlombaan yang terbuka untuk seluruh sekolah di area
             jabodetabek(Jakarta-Bogor-Depok-Tangerang-Bekasi)
