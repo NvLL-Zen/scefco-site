@@ -124,7 +124,7 @@ p {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     
     display: flex;
     flex-direction: row;
@@ -180,7 +180,7 @@ p {
 @media only screen and (max-width: 1025px) {
     :root {
         --h1-fz: 10vw;
-        --h2-fz: 5vw;
+        --h2-fz: 6vw;
         --h4-fz: 8vw;
         --nav-fz: 3.5vw;
         --p-fz: 3vw;
