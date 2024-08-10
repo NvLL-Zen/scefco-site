@@ -23,20 +23,17 @@ html {
 nav {
     font-size: var(--nav-fz);
     background-color: transparent;
-    padding: 0.5vw;
     text-align: left;
     position: fixed;
     width: 99%;
     height: 4vw;
-    margin: 2.5px;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 a {
     background-color: white;
     color: black;
+    text-decoration: none;
 }
 
 h1 {
@@ -65,7 +62,9 @@ p {
 
 .navItems {
     background-color: white;
-    padding: 5px;
+    padding: 0.5vw;
+    width: 8vw;
+    text-align: center;
 }
 
 .navDiv {
@@ -76,20 +75,19 @@ p {
 #navBar {
     background-color: transparent;
     border-radius: 10px;
-    padding: 0.5vw;
+    padding: 1vw;
 
     display: flex;
     flex-direction: row;
     font-size: var(--nav-fz);
     vertical-align: middle;
-    height: max-content;
+    height: 4vw;
 }
 
 #navLeft {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
-    padding-top: 1vw;
+    height: 4vw;
 
     background-color: transparent;
 }
@@ -103,21 +101,17 @@ p {
 }
 
 #navLogo {
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: 10px;
 }
 
 #navRight {
-    height: fit-content;
+    height: 4vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
-
-    padding-top: 1vw;
     background-color: transparent;
 }
 
@@ -137,6 +131,11 @@ p {
 }
 
 #section-tentang {
+    color: black;
+    background-color: white;
+}
+
+.section-lomba {
     color: black;
     background-color: white;
 }
@@ -167,6 +166,10 @@ p {
     width: fit-content;
 }
 
+#lomba-title {
+    align-self: center;
+}
+
 #timer {
     width: 80%;
     display: flex;
@@ -180,7 +183,45 @@ p {
         --h2-fz: 5vw;
         --h4-fz: 8vw;
         --nav-fz: 3.5vw;
+        --p-fz: 3vw;
     }
+
+    .navItems {
+        background-color: white;
+        width: 20vw;
+        height: 9vw;
+        padding-top: 5vw;
+        text-align: center;
+    }    
+
+    #navLeft, #navBar, #navRight{
+        height:10vw;
+    }
+
+    #navHome {
+        border-radius: 2px 0 0 2px;
+    }
+
+
+    #navLomba {
+        border-radius: 0 2px 2px 0;
+    }
+
+    #navLogo {
+        height: 15vw;
+        width: 15vw;
+    }
+
+    #tentang-paragraph {
+        width: 75%;
+    }
+
+    #countdown {
+        font-size: 12vw;
+    }
+
+
+
 
     /* #section-home {
         background-image:url("../images/fourseasons2_small.jpg");

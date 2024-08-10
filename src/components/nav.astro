@@ -7,14 +7,12 @@ const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
 <nav id={idName} class={className}>
-    <div id="navBar">
         <div id="navLeft" class="navDiv">
             <a id="navTentang" class="navItems" href="#section-tentang">Tentang</a>
             <a id="navHome" class="navItems navEdge" href="#section-home">Home</a>
         </div>
-        <Image alt="logo sc" src={LogoSC} class="navItems" class="navDiv" id="navLogo"></Image>
+        <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo"></Image>
         <div id="navRight" class="navDiv">
-            <a id="navLomba" class="navItems" href="/lomba/lomba1">Lomba</a>
+            <a id="navLomba" class="navItems" href="#section-lomba">Lomba</a>
         </div>
-    </div>
 </nav>
