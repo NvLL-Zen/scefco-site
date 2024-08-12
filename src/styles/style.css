@@ -119,7 +119,7 @@ p {
     text-align: center;
     align-items: center;
     width: 100%;
-    background-image:url("../images/sc_gradient.jpg");
+    background-image:url("../images/fourseasons2.jpeg");
 
     background-attachment: fixed;
     background-position: center;
@@ -143,7 +143,7 @@ p {
 #countdown {
     font-size: 8.5vw;
     font-family: "Sankofa Display", sans-serif;
-    word-spacing: 2vw;
+    word-spacing: 5vw;
     background-color: transparent;
     color: white;
     width: fit-content;
@@ -218,17 +218,20 @@ p {
 
     #countdown {
         font-size: 12vw;
+        word-spacing: 2vw;
     }
 
-
-
-
-    /* #section-home {
-        background-image:url("../images/fourseasons2_small.jpg");
-        background-size: auto;
-
-    } */
+    
 }
+
+@media only screen and (max-width: 1000px) {
+    #section-home {
+        background-image:url("../images/sc_gradient.jpg");
+        background-size: 100% 100%;
+    
+    }
+}
+
 
 /* @supports (-webkit-text-stroke: 2px black) {
     #countdown-timer {
