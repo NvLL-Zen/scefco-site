@@ -2,6 +2,7 @@
     --h1-fz: 6vw;
     --h2-fz: 2vw;
     --h4-fz: 3.5vw;
+    --h5-fz: clamp(20px, 3vw, 50px);
     --nav-fz: 2vw;
     --p-fz: 1.5vw;
 }
@@ -31,7 +32,6 @@ nav {
 }
 
 a {
-    background-color: white;
     color: black;
     text-decoration: none;
 }
@@ -49,8 +49,18 @@ h4 {
     font-size: var(--h4-fz);
 }
 
+h5 {
+    font-size: var(--h5-fz);
+}
+
 p {
     font-size: var(--p-fz);
+}
+
+iframe {
+    width: 250px;
+    height: 250px;
+    padding: 5px;
 }
 
 .tentang {
@@ -207,13 +217,51 @@ p {
     color: #DCECFC;
 }
 
+.Footer {
+    height: 55vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.Footer-Section {
+    width: 20vw;
+    height: 25vh;
+    margin-top: 5vh;
+}
+
+#footer-contact {
+    margin-right: 5vw;
+}
+
+#footer-location {
+    margin-left: 5vw;
+    height: fit-content;
+    width: fit-content;
+}
+
+.footer-text {
+    width: auto;
+    height: auto;
+    text-align: center;
+    color: white;
+}
+
+.footer-links {
+    border: 0px;
+    font-size: var(--p-fz);
+}
+
 @media only screen and (max-width: 1025px) {
     :root {
         --h1-fz: 10vw;
         --h2-fz: 6vw;
         --h4-fz: 8vw;
         --nav-fz: 3.5vw;
-        --p-fz: 3vw;
+        --p-fz: 4vw;
     }
 
     .navItems {
@@ -275,6 +323,31 @@ p {
         background-image:url("../images/SC_Gradient.jpg");
         background-size: 100% 100%;
     
+    }
+
+    iframe {
+        width: 190px;
+        height: 190px;
+    }
+
+    #footer-contact {
+        margin-right: 0;
+    }
+
+    #footer-location {
+        margin-left: 0;
+    }
+
+    .Footer {
+        flex-direction: column;
+        align-items: center;
+        height: 85vh;
+    }
+
+    .Footer-Section {
+        margin-top: 5vh;
+        width: 200px;
+        height: 200px;
     }
 }
 
