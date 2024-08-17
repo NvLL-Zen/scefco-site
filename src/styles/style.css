@@ -192,15 +192,15 @@ p {
 }
 
 #days {
-    color: greenyellow;
+    color: #BDF0C6;
 }
 
 #hours {
-    color: gray;
+    color: #F3F39B;
 }
 
 #minutes {
-    color: #7C692E;
+    color: #E3D5C8;
 }
 
 #seconds {
@@ -251,12 +251,28 @@ p {
         word-spacing: 2vw;
     }
 
+    #days {
+        color: #000000;
+    }
+    
+    #hours {
+        color: #000000;
+    }
+    
+    #minutes {
+        color: #000000;
+    }
+    
+    #seconds {
+        color: #000000;
+    }
+
     
 }
 
 @media only screen and (max-width: 1000px) {
     #section-home {
-        background-image:url("../images/sc_gradient.jpg");
+        background-image:url("../images/SC_Gradient.jpg");
         background-size: 100% 100%;
     
     }
