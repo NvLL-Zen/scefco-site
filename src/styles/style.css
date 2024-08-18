@@ -16,7 +16,7 @@ html {
     padding: 0;
     background-color: black;
     color: white;
-    border: 0.1px solid red;
+    /* border: 0.1px solid red; */
     font-family: "Red Hat Display", sans-serif;
     width: fit-content;
 }
@@ -55,12 +55,6 @@ h5 {
 
 p {
     font-size: var(--p-fz);
-}
-
-iframe {
-    width: 250px;
-    height: 250px;
-    padding: 5px;
 }
 
 .tentang {
@@ -143,6 +137,8 @@ iframe {
 #section-tentang {
     color: black;
     background-color: white;
+    height: 75vh;
+    border: 1px solid black
 }
 
 .section-lomba {
@@ -191,17 +187,20 @@ iframe {
 }
 
 .countdownText {
-    width: 23%;
+    width: 25%;
     background-color: transparent;
+    text-shadow: 3px 3px  5px black;
 }
 
 .countdownDot {
     width: 2%;
     background-color: transparent;
     color: black;
+    display: none;
 }
 
 #days {
+    margin-left: 0.5vw;
     color: #BDF0C6;
 }
 
@@ -218,6 +217,9 @@ iframe {
 }
 
 .Footer {
+    border-top: 1px solid black;
+    background-image: url('../images/Footer_BG.jpg');
+    background-size: 100% 100%;
     height: 55vh;
     width: 99vw;
     display: flex;
@@ -227,10 +229,16 @@ iframe {
 
 }
 
+.bg-white {
+    background-color: #eeebe3;
+}
+
 .Footer-Section {
+    background-color: #eeebe3;
     width: 20vw;
     height: 25vh;
-    margin-top: 5vh;
+    margin-top:15vh;
+    border-radius: 10px;
 }
 
 #footer-contact {
@@ -243,11 +251,17 @@ iframe {
     width: fit-content;
 }
 
+iframe {
+    width: 20vw;
+    height: 25vh;
+}
+
 .footer-text {
     width: auto;
     height: auto;
     text-align: center;
-    color: white;
+    color: black;
+    border-radius: 10px;
 }
 
 .footer-links {
@@ -255,7 +269,11 @@ iframe {
     font-size: var(--p-fz);
 }
 
-@media only screen and (max-width: 1025px) {
+.instagram {
+    color: purple;
+}
+
+@media only screen and (max-width: 720px) {
     :root {
         --h1-fz: 10vw;
         --h2-fz: 6vw;
@@ -291,7 +309,7 @@ iframe {
     }
 
     #tentang-paragraph {
-        width: 75%;
+        width: 85%;
     }
 
     #countdown {
@@ -318,16 +336,17 @@ iframe {
     
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 720px) {
     #section-home {
-        background-image:url("../images/SC_Gradient.jpg");
+        background-image:url("../images/Footer_BG.jpg");
         background-size: 100% 100%;
-    
+        height: 45vh;
     }
 
+
     iframe {
-        width: 190px;
-        height: 190px;
+        width: 250px;
+        height: 200px;
     }
 
     #footer-contact {
@@ -336,9 +355,19 @@ iframe {
 
     #footer-location {
         margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .countdownDot {
+        display: inline;
+    }
+
+    .countdownText {
+        text-shadow: none;
     }
 
     .Footer {
+        background-image: url('../images/Footer_Mobile_BG.jpg');
         flex-direction: column;
         align-items: center;
         height: 85vh;
@@ -346,7 +375,7 @@ iframe {
 
     .Footer-Section {
         margin-top: 5vh;
-        width: 200px;
+        width: 250px;
         height: 200px;
     }
 }
