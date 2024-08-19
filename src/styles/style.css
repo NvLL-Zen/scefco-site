@@ -68,10 +68,6 @@ p {
 .navtext {
     color: black;
     background-color: white;
-<<<<<<< HEAD
-=======
-    border: 1px solid purple;
->>>>>>> 780f714ab5ef0766039f3e16f2a61cc1ccce6dfe
     margin-right: 3vw;
     font-weight:bold;
 }
@@ -82,10 +78,6 @@ p {
     background-color: white;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-=======
-    border: 1px solid blue;
->>>>>>> 780f714ab5ef0766039f3e16f2a61cc1ccce6dfe
     display: flex;
 }
 
