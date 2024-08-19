@@ -3,7 +3,7 @@
     --h2-fz: 2vw;
     --h4-fz: 3.5vw;
     --h5-fz: clamp(20px, 3vw, 50px);
-    --nav-fz: 2vw;
+    --nav-fz: 1.5vw;
     --p-fz: 1.5vw;
 }
 
@@ -17,18 +17,19 @@ html {
     background-color: black;
     color: white;
     /* border: 0.1px solid red; */
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Rajdhani", sans-serif;
     width: fit-content;
 }
 
 nav {
     font-size: var(--nav-fz);
-    background-color: transparent;
-    text-align: left;
+    background-color: white;
+    text-align: center;
     position: fixed;
-    width: 99%;
-    height: 4vw;
     display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 4h;
 }
 
 a {
@@ -64,59 +65,49 @@ p {
     background-color: white;
 }
 
-.navItems {
+.navtext {
+    color: black;
     background-color: white;
-    padding: 0.5vw;
-    width: 8vw;
-    text-align: center;
+    border: 1px solid purple;
+    margin-right: 3vw;
+    font-weight:bold;
 }
 
-.navDiv {
-    width: 47.5vw;
-    height: fit-content;
-}
-
-#navBar {
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 1vw;
-
+#navHolder {
+    margin-left: 2vw;
+    color: black;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blue;
     display: flex;
-    flex-direction: row;
-    font-size: var(--nav-fz);
-    vertical-align: middle;
-    height: 4vw;
 }
 
-#navLeft {
-    display: flex;
-    flex-direction: row-reverse;
-    height: 4vw;
+#hamburger {
+    min-width: 90vw;
+    background-color: white;
+    text-align: end;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
 
+#hamburg {
+    width: clamp(50px, 4vw, 100px);
+    height: clamp(50px, 4vw, 100px);
+    background-color: white;
+}
+
+button {
     background-color: transparent;
-}
-
-#navHome {
-    border-radius: 7.5px 0 0 7.5px;
-}
-
-#navLomba {
-    border-radius: 0 7.5px 7.5px 0;
 }
 
 #navLogo {
-    width: 4vw;
-    height: 4vw;
+    width: clamp(50px, 4vw, 100px);
+    height: clamp(50px, 4vw, 100px);
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-#navRight {
-    height: 4vw;
-    display: flex;
-    flex-direction: row;
-    background-color: transparent;
 }
 
 #section-home {
@@ -130,6 +121,7 @@ p {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
+    font-family: "Red Hat Display", sans-serif;
     display: flex;
     flex-direction: row;
 }
@@ -175,8 +167,6 @@ p {
 }
 
 #timer {
-    font-size: 8.5vw;
-    font-family: "Rubik", sans-serif;
     word-spacing: 3vw;
     width: 100%;
     display: flex;
@@ -187,20 +177,21 @@ p {
 }
 
 .countdownText {
-    width: 25%;
+    width: 23vw;
     background-color: transparent;
     text-shadow: 3px 3px  5px black;
+    font-family: "Red Hat Display", sans-serif;
 }
 
 .countdownDot {
-    width: 2%;
+    width: 2vw;
     background-color: transparent;
     color: black;
-    display: none;
+
 }
 
 #days {
-    margin-left: 0.5vw;
+    margin-left: 0vw;
     color: #BDF0C6;
 }
 
@@ -278,34 +269,13 @@ iframe {
         --h1-fz: 10vw;
         --h2-fz: 6vw;
         --h4-fz: 8vw;
-        --nav-fz: 3.5vw;
+        --nav-fz: 4vw;
         --p-fz: 4vw;
     }
 
-    .navItems {
-        background-color: white;
-        width: 20vw;
-        height: 9vw;
-        padding-top: 5vw;
-        text-align: center;
-    }    
-
-    #navLeft, #navBar, #navRight{
-        height:10vw;
-    }
-
-    #navHome {
-        border-radius: 2px 0 0 2px;
-    }
-
-
-    #navLomba {
-        border-radius: 0 2px 2px 0;
-    }
-
     #navLogo {
-        height: 15vw;
-        width: 15vw;
+        height: clamp(50px, 4vw, 100px);
+        width: clamp(50px, 4vw, 100px);
     }
 
     #tentang-paragraph {
@@ -343,6 +313,13 @@ iframe {
         height: 45vh;
     }
 
+    #navHolder {
+        display: none;
+    }
+
+    #hamburger {
+        display: inline;
+    }
 
     iframe {
         width: 250px;
@@ -356,10 +333,6 @@ iframe {
     #footer-location {
         margin-left: 0;
         margin-bottom: 20px;
-    }
-
-    .countdownDot {
-        display: inline;
     }
 
     .countdownText {

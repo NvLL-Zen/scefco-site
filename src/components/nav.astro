@@ -1,18 +1,22 @@
 ---
 import "../styles/style.css";
-import LogoSC from '../images/logo_sc_putih.jpg'
+import LogoSC from "../images/logo_sc_putih.jpg";
 import Image from "astro/components/Image.astro";
-
+import HamBurg from "../images/burger-bar.png";
 const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
 <nav id={idName} class={className}>
-        <div id="navLeft" class="navDiv">
-            <a id="navTentang" class="navItems" href="#section-tentang">Tentang</a>
-            <a id="navHome" class="navItems navEdge" href="#section-home">Home</a>
-        </div>
-        <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo"></Image>
-        <div id="navRight" class="navDiv">
-            <a id="navLomba" class="navItems" href="#section-lomba">Lomba</a>
-        </div>
+  <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo" />
+  <div id="navHolder">
+    <a href="#section-home" class="navtext">Home</a>
+    <a href="#section-tentang" class="navtext">Tentang</a>
+    <a href="#section-lomba" class="navtext">Lomba</a>
+    <a href="" class="navtext">Merch</a>
+  </div>
+  <div id="hamburger">
+    <button>
+      <Image id="hamburg" alt="hamburg" src={HamBurg} />
+    </button>
+  </div>
 </nav>
