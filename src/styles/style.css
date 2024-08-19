@@ -68,7 +68,6 @@ p {
 .navtext {
     color: black;
     background-color: white;
-    border: 1px solid purple;
     margin-right: 3vw;
     font-weight:bold;
 }
@@ -79,7 +78,6 @@ p {
     background-color: white;
     align-items: center;
     justify-content: center;
-    border: 1px solid blue;
     display: flex;
 }
 
@@ -209,7 +207,6 @@ button {
 
 .Footer {
     border-top: 1px solid black;
-    background-image: url('../images/Footer_BG.jpg');
     background-size: 100% 100%;
     height: 55vh;
     width: 99vw;
@@ -221,11 +218,12 @@ button {
 }
 
 .bg-white {
-    background-color: #eeebe3;
+    background-color: transparent;
 }
 
 .Footer-Section {
-    background-color: #eeebe3;
+    background-color: transparent;
+    color: white;
     width: 20vw;
     height: 25vh;
     margin-top:15vh;
@@ -245,13 +243,14 @@ button {
 iframe {
     width: 20vw;
     height: 25vh;
+    border-radius: 10px;
 }
 
 .footer-text {
     width: auto;
     height: auto;
     text-align: center;
-    color: black;
+    color: white;
     border-radius: 10px;
 }
 
@@ -260,9 +259,6 @@ iframe {
     font-size: var(--p-fz);
 }
 
-.instagram {
-    color: purple;
-}
 
 @media only screen and (max-width: 720px) {
     :root {
@@ -340,7 +336,6 @@ iframe {
     }
 
     .Footer {
-        background-image: url('../images/Footer_Mobile_BG.jpg');
         flex-direction: column;
         align-items: center;
         height: 85vh;
