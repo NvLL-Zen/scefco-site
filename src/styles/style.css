@@ -328,14 +328,14 @@ iframe {
         display: none;
         flex-direction: column;
         position: fixed;
-        margin-top: 7.5vh;
+        margin-top: clamp(50px, 7.5vh, 100px);
         width: 100vw;
         height: 25vh;
         background-color: white;
     }
 
     #navBlock {
-        height: 37vh;
+        height: calc(clamp(50px, 7.5vh, 100px) + 25vh);
     }
 
     .navText {
