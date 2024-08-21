@@ -1,9 +1,10 @@
 ---
 import Main from "../layouts/main.astro";
-import Section from "../components/section.astro";
-import Nav from "../components/nav.astro";
 import Footer from "../components/footer.astro";
 import Logo_SC from '../images/logo_sc_putih.jpg'
+import Nav from "../components/nav.astro";
+import Section from "../components/section.astro";
+import SectionLomba from "../components/section-lomba.astro";
 import Image from "astro/components/Image.astro";
 import "../styles/style.css";
 ---
@@ -41,7 +42,7 @@ import "../styles/style.css";
         </div>
     </Section>
     <Section id="section-lomba" class="section-lomba">
-        <h1 id="lomba-title" class="section-lomba">(Daftar Lomba)</h1>
+        <SectionLomba />
     </Section>
     <Footer class="Footer">
         <div class="Footer-Section" id="footer-contact">

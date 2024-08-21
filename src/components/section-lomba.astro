@@ -1,0 +1,43 @@
+---
+
+---
+<div class="daftar-lomba" id="lomba-main">
+    <div class="daftar-lomba" id="lomba-grid">
+        <div class="daftar-lomba lomba-entry" id="lomba1">Lomba 1</div>
+        <div class="daftar-lomba lomba-entry" id="lomba2">Lomba 2</div>
+        <div class="daftar-lomba lomba-entry" id="lomba3">Lomba 3</div>
+        <div class="daftar-lomba lomba-entry" id="lomba4">Lomba 4</div>
+        <div class="daftar-lomba lomba-entry" id="lomba5">Lomba 5</div>
+        <div class="daftar-lomba lomba-entry" id="lomba6">Lomba 6</div>
+    </div>
+</div>
+<style>
+    .daftar-lomba {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+
+    .lomba-entry {
+        width: 30vw;
+        height: 40vh;
+    }
+
+    #lomba-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #lomba-grid {
+        display: grid;
+        grid-template-rows: 40vh 40vh;
+        grid-template-columns: 30vw 30vw 30vw;
+    }
+</style>
+
+<script src="../scripts/lomba-zoom.js"></script>
