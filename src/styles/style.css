@@ -19,7 +19,7 @@ html {
     padding: 0;
     background-color: black;
     color: white;
-    border: 0.1px solid red;
+    /* border: 0.1px solid red; */
     font-family: "Rajdhani", sans-serif;
     width: fit-content;
 }
@@ -148,7 +148,7 @@ p {
 #tentang-main-text {
     text-align: left;
     background-color: white;
-    padding-left: 5.5vw;
+    padding-left: calc(clamp(50px, 4vw, 100px) + 2vw);
 }
 
 #tentang-photo {
@@ -161,7 +161,7 @@ p {
 }
 
 .tentang {
-    text-align: left;
+    text-align: justify;
     align-self: left;
     color: black;
     background-color: white;
@@ -195,6 +195,7 @@ p {
 
 #tentang-title {
     width: fit-content;
+    font-size: var(--h4-fz);
 }
 
 #lomba-title {
@@ -348,18 +349,18 @@ iframe {
 
     #section-tentang {
         flex-direction: column-reverse;
-        height: 90vh;
+        height: 100vh;
     }
 
     #tentang-main {
         width: 100vw;
-        height: 50vh;
+        height: 70vh;
     }
 
     #tentang-photo {
         justify-content: center;
         width: 100vw;
-        height: 40vh;
+        height: 30vh;
         align-items: center;
     }
 
