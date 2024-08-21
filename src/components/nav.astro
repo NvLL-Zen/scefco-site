@@ -7,17 +7,23 @@ const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
 <nav id={idName} class={className}>
-  <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo" />
-  <div id="navHolder">
-    <a href="#section-home" class="navtext">Home</a>
-    <a href="#section-tentang" class="navtext">Tentang</a>
-    <a href="#section-lomba" class="navtext">Lomba</a>
-    <a href="" class="navtext">Merch</a>
+  <div id="mainDiv">
+    <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo" />
+    <div id="navHolder">
+      <a href="#section-home" class="navtext">Home</a>
+      <a href="#section-tentang" class="navtext">Tentang</a>
+      <a href="#section-lomba" class="navtext">Lomba</a>
+      <a href="" class="navtext">Merch</a>
+    </div>
+    <div id="hamburger" class="hamburg">
+      <Image class="hamburg" alt="hamburg" src={HamBurg} />
+      <script src="../scripts/nav.js"></script>
+    </div>
   </div>
-  <!-- <div id="hamburger">
-    <button onclick="">
-    <button>
-      <Image id="hamburg" alt="hamburg" src={HamBurg} />
-    </button>
-  </div> -->
+  <div id="navDrop">
+    <a href="#section-home" id="home-link" class="navText">Home</a>
+    <a href="#section-tentang" class="navText">Tentang</a>
+    <a href="#section-lomba" class="navText">Lomba</a>
+    <a href="" id="merch-link" class="navText">Merch</a>
+  </div>
 </nav>
