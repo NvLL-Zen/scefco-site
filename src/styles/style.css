@@ -168,9 +168,17 @@ p {
     padding: 1vh;
 }
 
+.lomba-entry {
+    font-size: var(--h2-fz);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+}
 .section-lomba {
     color: black;
-    background-color: white;
+    background-color: #FFFFFF;
 }
 
 /* #countdown {

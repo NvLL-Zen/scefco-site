@@ -1,9 +1,9 @@
-lomba1 = document.getElementById("lomba1")
-lomba2 = document.getElementById("lomba2")
-lomba3 = document.getElementById("lomba3")
-lomba4 = document.getElementById("lomba4")
-lomba5 = document.getElementById("lomba5")
-lomba6 = document.getElementById("lomba6")
+const lomba1 = document.getElementById("lomba1")
+const lomba2 = document.getElementById("lomba2")
+const lomba3 = document.getElementById("lomba3")
+const lomba4 = document.getElementById("lomba4")
+const lomba5 = document.getElementById("lomba5")
+const lomba6 = document.getElementById("lomba6")
 
 let elementList = [lomba1, lomba2, lomba3, lomba4, lomba5, lomba6]
 const lombaGrid = document.getElementById("lomba-grid")
@@ -19,7 +19,7 @@ const toggleDisplay = (elementExcept, option) => {
         elementExcept.style.height = "80vh"
         mainHtml.style.overflowY = "hidden"
     } else if (option === 1) {
-        option = "inline"
+        option = "flex"
         lombaGrid.style.gridTemplateRows = "40vh 40vh"
         lombaGrid.style.gridTemplateColumns = "30vw 30vw 30vw"
         elementExcept.style.width = "30vw"
@@ -40,7 +40,7 @@ for (let i = 0; i < 6; i++){
     let currentElement = elementList[i]
     currentElement.addEventListener("click", function() {
         if (currentElement.style.backgroundColor === "white") {
-            currentElement.style.backgroundColor = "red"
+            currentElement.style.backgroundColor = "#FCFCFC"
             toggleDisplay(currentElement, 0)
         }
         else {
