@@ -23,6 +23,11 @@
     .lomba-entry {
         width: 30vw;
         height: 40vh;
+        z-index: 0;
+        animation-duration: 0.25s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards
     }
 
     #lomba-main {
@@ -37,6 +42,20 @@
         display: grid;
         grid-template-rows: 40vh 40vh;
         grid-template-columns: 30vw 30vw 30vw;
+    }
+
+    @keyframes zoomIn {
+        to {
+            width: 90vw;
+            height: 80vh;
+        }
+    }
+
+    @keyframes zoomOut {
+        to {
+            width: 30vw;
+            height: 40vh;
+        }
     }
 </style>
 

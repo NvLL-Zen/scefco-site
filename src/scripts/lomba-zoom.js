@@ -13,18 +13,20 @@ const mainHtml = document.querySelector("html")
 const toggleDisplay = (elementExcept, option) => {
     if (option === 0) {
         option = "none"
-        lombaGrid.style.gridTemplateRows = "80vh"
-        lombaGrid.style.gridTemplateColumns = "90vw"
-        elementExcept.style.width = "90vw"
-        elementExcept.style.height = "80vh"
+        lombaGrid.style.display = "flex"
+        lombaGrid.style.alignItems = "center"
+        lombaGrid.style.justifyContent = "center"
+        elementExcept.style.animationName = "zoomIn"
         mainHtml.style.overflowY = "hidden"
+        window.location.href = "#lomba-main";
     } else if (option === 1) {
         option = "flex"
+        elementExcept.style.animationName = "zoomOut"
+        lombaGrid.style.display = "grid"
         lombaGrid.style.gridTemplateRows = "40vh 40vh"
         lombaGrid.style.gridTemplateColumns = "30vw 30vw 30vw"
-        elementExcept.style.width = "30vw"
-        elementExcept.style.height = "40vh"
         mainHtml.style.overflowY = "scroll"
+        window.location.href = "#lomba-main";
     }
     for (let j = 0; j < 6; j++) {
         if ( elementExcept.id == elementList[j].id) {
