@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wii-style Menu with 3x3 Grid (90vw x 66vh)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-container {
+            position: relative;
+            width: 90vw;
+            height: 66vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 3vh;
+            width: 30vw;
+            height: 22vh;
+        }
+        .duplicate {
+            position: absolute;
+            z-index: 2;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+        }
+        @keyframes expand {
+            from {
+                top: var(--top);
+                left: var(--left);
+                width: 30vw;
+                height: 22vh;
+            }
+            to {
+                top: 0;
+                left: 0;
+                width: 90vw;
+                height: 66vh;
+            }
+        }
+        @keyframes shrink {
+            from {
+                top: 0;
+                left: 0;
+                width: 90vw;
+                height: 66vh;
+            }
+            to {
+                top: var(--top);
+                left: var(--left);
+                width: 30vw;
+                height: 22vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item" onclick="toggleExpand(this)">1</div>
+        <div class="grid-item" onclick="toggleExpand(this)">2</div>
+        <div class="grid-item" onclick="toggleExpand(this)">3</div>
+        <div class="grid-item" onclick="toggleExpand(this)">4</div>
+        <div class="grid-item" onclick="toggleExpand(this)">5</div>
+        <div class="grid-item" onclick="toggleExpand(this)">6</div>
+        <div class="grid-item" onclick="toggleExpand(this)">7</div>
+        <div class="grid-item" onclick="toggleExpand(this)">8</div>
+        <div class="grid-item" onclick="toggleExpand(this)">9</div>
+    </div>
+
+    <script>
+        function toggleExpand(item) {
+            const container = document.querySelector('.grid-container');
+            const duplicate = container.querySelector('.duplicate');
+            
+            if (duplicate) {
+                duplicate.style.animation = 'shrink 0.3s forwards';
+                duplicate.addEventListener('animationend', () => {
+                    duplicate.remove();
+                }, {once: true});
+            } else {
+                const rect = item.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                
+                const newDuplicate = item.cloneNode(true);
+                newDuplicate.classList.add('duplicate');
+                newDuplicate.style.setProperty('--top', `${rect.top - containerRect.top}px`);
+                newDuplicate.style.setProperty('--left', `${rect.left - containerRect.left}px`);
+                
+                newDuplicate.style.top = `${rect.top - containerRect.top}px`;
+                newDuplicate.style.left = `${rect.left - containerRect.left}px`;
+                newDuplicate.style.width = '30vw';
+                newDuplicate.style.height = '22vh';
+                
+                container.appendChild(newDuplicate);
+                
+                // Trigger reflow
+                newDuplicate.offsetWidth;
+                
+                newDuplicate.style.animation = 'expand 0.3s forwards';
+            }
+        }
+    </script>
+</body>
+</html>
