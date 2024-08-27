@@ -110,13 +110,14 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: transparent;
 }
 
 #navBlock {
     display: none;
 }
 
-#section-home {
+#section-countdown {
     text-align: center;
     align-items: center;
     width: 100%;
@@ -132,13 +133,27 @@ p {
     flex-direction: row;
 }
 
+#section-home {
+    align-items: center;
+    background-image: url('../images/scefart.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
 #section-tentang {
     color: black;
     background-color: white;
-    height: 60vh;
+    height: 100vh;
     border: 1px solid black;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+
+#section-lomba {
+    align-items: center;
 }
 
 #tentang-main{
@@ -148,16 +163,16 @@ p {
     justify-content: center;
     display: flex;
     background-color: white;
+    align-items: flex-start;
 }
 #tentang-main-text {
-    text-align: left;
+    text-align: center;
     background-color: white;
-    padding-left: calc(clamp(50px, 4vw, 100px) + 2vw);
 }
 
 #tentang-photo {
     width: 50vw;
-    height: 60vh;
+    height: 50vh;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -165,21 +180,13 @@ p {
 }
 
 .tentang {
-    text-align: justify;
+    text-align: center;
     align-self: left;
     color: black;
     background-color: white;
     padding: 1vh;
 }
 
-.lomba-entry {
-    font-size: var(--h2-fz);
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-weight: 600;
-}
 .section-lomba {
     color: black;
     background-color: #FFFFFF;
@@ -193,25 +200,29 @@ p {
 } */
 
 #sc-pic {
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 15vw;
     align-self: left;
+    background-size: cover;
 }
 
 #tentang-paragraph {
     font-size: var(--p-fz);
     display: flex;
     margin: 0;
-    width: 92.5%;
+    width: 97.5%;
 }
 
 #tentang-title {
-    width: fit-content;
+    width: 97.5%;
     font-size: var(--h4-fz);
 }
 
 #lomba-title {
     align-self: center;
+    color: black;
+    background-color: white;
+    margin-bottom: 20px;
 }
 
 #timer {
@@ -353,20 +364,15 @@ iframe {
 }
 
 @media only screen and (max-width: 720px) {
-    #section-home {
+    #section-countdown {
         background-image:url("../images/Footer_BG.jpg");
         background-size: 100% 100%;
         height: 45vh;
     }
 
-    #section-tentang {
-        flex-direction: column-reverse;
-        height: 100vh;
-    }
-
     #tentang-main {
         width: 100vw;
-        height: 70vh;
+        height: 50vh;
     }
 
     #tentang-photo {
@@ -377,8 +383,8 @@ iframe {
     }
 
     #sc-pic {
-        width: 20vw;
-        height: 20vw;
+        width: 40vw;
+        height: 40vw;
     }
 
     #navHolder {

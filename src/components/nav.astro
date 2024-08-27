@@ -1,6 +1,6 @@
 ---
 import "../styles/style.css";
-import LogoSC from "../images/logo_sc_putih.jpg";
+import LogoSC from "../images/sceflogo.jpg";
 import Image from "astro/components/Image.astro";
 import HamBurg from "../images/burger-bar.png";
 const { id: idName, class: className, ...rest } = Astro.props;
@@ -8,7 +8,7 @@ const { id: idName, class: className, ...rest } = Astro.props;
 
 <nav id={idName} class={className}>
   <div id="mainDiv">
-    <Image alt="logo sc" src={LogoSC} class="navDiv" id="navLogo" />
+    <img alt="logo sc" src={LogoSC.src} class="navDiv" id="navLogo" />
     <div id="navHolder">
       <a href="#section-home" class="navtext">Home</a>
       <a href="#section-tentang" class="navtext">Tentang</a>

@@ -1,7 +1,7 @@
 ---
 import Main from "../layouts/main.astro";
 import Footer from "../components/footer.astro";
-import Logo_SC from '../images/logo_sc_putih.jpg'
+import Logo_SC from '../images/sceflogo.jpg'
 import Nav from "../components/nav.astro";
 import Section from "../components/section.astro";
 import LombaGrid from "../components/lomba-grid.astro";
@@ -14,7 +14,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
     <Nav id="nav" />
     <div id="navBlock">
     </div>
-    <Section id="section-home">
+    <Section id="section-countdown">
         <div id="timer">
             <h1 class="countdownText" id="days"></h1>
             <h1 class="countdownDot">:</h1>
@@ -25,6 +25,12 @@ import { defineConfig, passthroughImageService } from "astro/config";
             <h1 class="countdownText" id="seconds"></h1>
         </div>
         <!-- <h1 class="countdownText" id="countdown"></h1> -->
+    </Section>
+    <Section id="section-home">
+        <!-- <h1>(Insert Scefco Art)</h1> -->
+    </Section>
+    <Section id="section-lomba" class="section-lomba">
+        <LombaGrid />
     </Section>
     <Section id="section-tentang">
         <div id="tentang-main">
@@ -39,11 +45,8 @@ import { defineConfig, passthroughImageService } from "astro/config";
         </div>
         </div>
         <div id="tentang-photo">
-            <Image src={Logo_SC} alt="LOGO SC" id="sc-pic" class="tentang">(LOGO SC)</Image>
+            <img src={Logo_SC.src} alt="LOGO SC" id="sc-pic" class="tentang">
         </div>
-    </Section>
-    <Section id="section-lomba" class="section-lomba">
-        <LombaGrid />
     </Section>
     <Footer class="Footer">
         <div class="Footer-Section" id="footer-contact">

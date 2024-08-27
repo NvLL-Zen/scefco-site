@@ -1,14 +1,16 @@
 ---
 ---
     <style>
+
         .grid-container {
             position: relative;
-            width: 90vw;
-            height: 66vh;
+            background-color: transparent;
+            width: calc(90vw + 40px);
+            height: calc(66vh + 40px);
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            gap: 10px;
+            gap: 20px;
         }
         .grid-item {
             background-color: #3498db;
@@ -20,6 +22,7 @@
             font-size: 3vh;
             width: 30vw;
             height: 22vh;
+            border-radius: 15px;
         }
         .duplicate {
             position: absolute;
@@ -38,16 +41,16 @@
             to {
                 top: 0px;
                 left: 0px;
-                width: calc(90vw + 20px);
-                height: calc(66vh + 20px);
+                width: calc(90vw + 40px);
+                height: calc(66vh + 40px);
             }
         }
         @keyframes shrink {
             from {
                 top: 0px;
                 left: 0px;
-                width: calc(90vw + 20px);
-                height: calc(66vh + 20px);
+                width: calc(90vw + 40px);
+                height: calc(66vh + 40px);
             }
             to {
                 top: var(--top);
@@ -57,6 +60,7 @@
             }
         }
     </style>
+    <h1 id="lomba-title">COMPETITIONS</h1>
     <div id="mainGrid" class="grid-container">
         <div class="grid-item">1</div>
         <div class="grid-item">2</div>
