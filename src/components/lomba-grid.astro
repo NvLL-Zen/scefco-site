@@ -1,0 +1,125 @@
+---
+---
+    <style>
+        .grid-container {
+            position: relative;
+            width: 90vw;
+            height: 66vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 3vh;
+            width: 30vw;
+            height: 22vh;
+        }
+        .duplicate {
+            position: absolute;
+            z-index: 2;
+            background-color: #e74c3c;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        @keyframes expand {
+            from {
+                top: var(--top);
+                left: var(--left);
+                width: 30vw;
+                height: 22vh;
+            }
+            to {
+                top: 0px;
+                left: 0px;
+                width: calc(90vw + 20px);
+                height: calc(66vh + 20px);
+            }
+        }
+        @keyframes shrink {
+            from {
+                top: 0px;
+                left: 0px;
+                width: calc(90vw + 20px);
+                height: calc(66vh + 20px);
+            }
+            to {
+                top: var(--top);
+                left: var(--left);
+                width: 30vw;
+                height: 22vh;
+            }
+        }
+    </style>
+    <div id="mainGrid" class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <script>
+        function toggleExpand(event) {
+            const container = document.querySelector('.grid-container');
+            const duplicate = container.querySelector('.duplicate');
+            const clickedItem = event.target.closest('.grid-item, .duplicate');
+
+            if (duplicate) {
+                shrinkDuplicate(duplicate);
+            } else if (clickedItem && !clickedItem.classList.contains('duplicate')) {
+                expandGridItem(clickedItem, container);
+            }
+        }
+
+        function shrinkDuplicate(duplicate) {
+            duplicate.style.animation = 'shrink 0.3s forwards';
+            duplicate.addEventListener('animationend', () => {
+                duplicate.remove();
+            }, {once: true});
+        }
+
+        function expandGridItem(clickedItem, container) {
+            const rect = clickedItem.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+
+            const newDuplicate = clickedItem.cloneNode(true);
+            newDuplicate.classList.add('duplicate');
+            newDuplicate.style.setProperty('--top', `${rect.top - containerRect.top}px`);
+            newDuplicate.style.setProperty('--left', `${rect.left - containerRect.left}px`);
+
+            newDuplicate.style.top = `${rect.top - containerRect.top}px`;
+            newDuplicate.style.left = `${rect.left - containerRect.left}px`;
+            newDuplicate.style.width = '30vw';
+            newDuplicate.style.height = '22vh';
+
+            container.appendChild(newDuplicate);
+
+            // Trigger reflow
+            newDuplicate.offsetWidth;
+
+            newDuplicate.style.animation = 'expand 0.3s forwards';
+
+            // Add click event listener to the duplicate
+            newDuplicate.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the click from reaching the container
+                shrinkDuplicate(newDuplicate);
+            });
+        }
+
+        // Add event listener to the container using event delegation
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.grid-container');
+            container.addEventListener('click', toggleExpand);
+        });
+    </script>

@@ -12,6 +12,9 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    display: block;
+}
 
 
 * {

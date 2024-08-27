@@ -4,7 +4,7 @@ import Footer from "../components/footer.astro";
 import Logo_SC from '../images/logo_sc_putih.jpg'
 import Nav from "../components/nav.astro";
 import Section from "../components/section.astro";
-import SectionLomba from "../components/section-lomba.astro";
+import LombaGrid from "../components/lomba-grid.astro";
 import Image from "astro/components/Image.astro";
 import "../styles/style.css";
 import { defineConfig, passthroughImageService } from "astro/config";
@@ -43,7 +43,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
         </div>
     </Section>
     <Section id="section-lomba" class="section-lomba">
-        <SectionLomba />
+        <LombaGrid />
     </Section>
     <Footer class="Footer">
         <div class="Footer-Section" id="footer-contact">
