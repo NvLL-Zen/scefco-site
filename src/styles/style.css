@@ -199,6 +199,30 @@ p {
     width: 100vw;
 } */
 
+#section-trailer {
+    background-color: #ffffff;
+    align-items: center;
+}
+
+#trailer-main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+}
+
+#trailer-video {
+    width: 50vw;
+    height: 50vh;
+}
+
+.trailer-section {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
 #sc-pic {
     width: 15vw;
     height: 15vw;
