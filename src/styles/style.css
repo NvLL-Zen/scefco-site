@@ -184,7 +184,6 @@ p {
     align-self: left;
     color: black;
     background-color: white;
-    padding: 1vh;
 }
 
 .section-lomba {
@@ -238,7 +237,7 @@ p {
 }
 
 #tentang-title {
-    width: 97.5%;
+    width: 100%;
     font-size: var(--h4-fz);
 }
 
@@ -360,7 +359,7 @@ iframe {
     }
 
     #tentang-paragraph {
-        width: 85%;
+        width: 100%;
     }
 
     #countdown {
