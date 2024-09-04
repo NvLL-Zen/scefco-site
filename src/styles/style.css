@@ -70,6 +70,17 @@ p {
     font-weight: 500;
 }
 
+@keyframes hoverScale {
+    to {transform: scale(1.06);}
+}
+
+.hoverPop:hover {
+    animation-name: hoverScale;
+    animation-duration: 100ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .navtext {
     color: black;
     background-color: white;

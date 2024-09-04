@@ -15,7 +15,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
     <div id="navBlock">
     </div>
     <Section id="section-countdown">
-        <div id="timer">
+        <div id="timer" class="hoverPop">
             <h1 class="countdownText" id="days"></h1>
             <h1 class="countdownDot">:</h1>
             <h1 class="countdownText" id="hours"></h1>
@@ -35,14 +35,14 @@ import { defineConfig, passthroughImageService } from "astro/config";
     <Section id="section-trailer">
         <div id="trailer-main" class="trailer-section">
             <h1 class="trailer-section"></h1>
-            <iframe class="trailer-section" id="trailer-video" src="https://www.youtube.com/embed/2r315WCynpM" title="SCEFCO 2024, COMING SOON ‼️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="trailer-section hoverPop" id="trailer-video" src="https://www.youtube.com/embed/2r315WCynpM" title="SCEFCO 2024, COMING SOON ‼️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </Section>
     <Section id="section-tentang">
         <div id="tentang-main">
         <div id="tentang-main-text">
-                <h2 id="tentang-title" class="tentang">Tentang SCEFCO</h2>
-                <p id="tentang-paragraph" class="tentang">
+                <h2 id="tentang-title" class="tentang hoverPop">Tentang SCEFCO</h2>
+                <p id="tentang-paragraph" class="tentang hoverPop">
                     SCEFCO atau SINAR CENDEKIA FESTIVAL and COMPETITION adalah event tahunan Sekolah Sinar Cendekia dalam rangka
                     merayakan dan menyambut ulang tahunnya yaitu pada tanggal 11 November
                     berupa ajang perlombaan yang terbuka untuk seluruh sekolah di area
@@ -51,19 +51,19 @@ import { defineConfig, passthroughImageService } from "astro/config";
         </div>
         </div>
         <div id="tentang-photo">
-            <img src={Logo_SC.src} alt="LOGO SC" id="sc-pic" class="tentang">
+            <img src={Logo_SC.src} alt="LOGO SC" id="sc-pic" class="tentang hoverPop">
         </div>
     </Section>
     <Footer class="Footer">
-        <div class="Footer-Section" id="footer-contact">
+        <div class="Footer-Section hoverPop" id="footer-contact">
             <h5 class="footer-text bg-white">Contact</h1>
             <a class="footer-text footer-links bg-white">(Kontak Humas)</h6>
         </div>
-       <div class="Footer-Section" id="footer-follow">
+       <div class="Footer-Section hoverPop" id="footer-follow">
             <h5 class="footer-text bg-white">Follow US</h2>
             <a  class="footer-text footer-links bg-white instagram" target="_blank" href="https://www.instagram.com/scefco.official/">@scefco.official</a>
        </div>
-       <div class="Footer-Section" id="footer-location">
+       <div class="Footer-Section hoverPop" id="footer-location">
             <h5 class="footer-text bg-white">Location</h2>
             <iframe class="bg-white" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.6311350591945!2d106.68962817589214!3d-6.312092861772339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5c08501f243%3A0x1fc2d531dc7b43a4!2sSMA%20ISLAM%20SINAR%20CENDEKIA!5e0!3m2!1sen!2sid!4v1723902494319!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
        </div>
