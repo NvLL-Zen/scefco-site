@@ -358,6 +358,14 @@ iframe {
     color: white;
 }
 
+#credit-section {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 @media only screen and (max-width: 720px) {
     :root {
