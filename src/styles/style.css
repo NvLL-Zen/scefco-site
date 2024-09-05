@@ -35,8 +35,9 @@ nav {
 
 #mainDiv {
     font-size: var(--nav-fz);
-    background-color: white;
+    background-color: transparent;
     text-align: center;
+    justify-content: center;
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -93,12 +94,14 @@ p {
 }
 
 #navHolder {
-    margin-left: 2vw;
+    margin-left: -1vw;
     color: black;
     background-color: white;
     align-items: center;
     justify-content: center;
     display: flex;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 #hamburger {
@@ -121,11 +124,20 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 3vw;
     background-color: transparent;
 }
 
 #navBlock {
     display: none;
+}
+
+#section-home-link {
+    margin-left: 1vw;
+}
+
+#section-merch {
+    margin-right: 1vw;
 }
 
 #section-countdown {
@@ -367,6 +379,7 @@ iframe {
 }
 
 
+
 @media only screen and (max-width: 720px) {
     :root {
         --h1-fz: 10vw;
@@ -410,6 +423,11 @@ iframe {
 }
 
 @media only screen and (max-width: 720px) {
+
+    #mainDiv {
+        background-color: white;
+    }
+
     #section-countdown {
         background-image:url("../images/Footer_BG.jpg");
         background-size: 100% 100%;
