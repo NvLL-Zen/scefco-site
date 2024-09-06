@@ -1,10 +1,11 @@
 ---
 import Main from "../layouts/main.astro";
 import Footer from "../components/footer.astro";
-import Logo_SC from '../images/sceflogo.jpg'
+import Logo_SC from '../images/logo/sceflogo.jpg'
 import Nav from "../components/betternav.astro";
 import Section from "../components/section.astro";
 import LombaGrid from "../components/lomba-grid.astro";
+import LombaCarousel from "../components/lomba-carousel.astro";
 import Image from "astro/components/Image.astro";
 import "../styles/style.css";
 import { defineConfig, passthroughImageService } from "astro/config";
@@ -30,7 +31,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
         <!-- <h1>(Insert Scefco Art)</h1> -->
     </Section>
     <Section id="section-lomba" class="section-lomba">
-        <LombaGrid />
+        <LombaCarousel />
     </Section>
     <Section id="section-trailer">
         <div id="trailer-main" class="trailer-section">

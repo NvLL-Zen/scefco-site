@@ -1,8 +1,8 @@
 ---
 import "../styles/style.css";
-import LogoSC from "../images/sceflogo.jpg";
+import LogoSC from "../images/logo/sceflogo.jpg";
 import Image from "astro/components/Image.astro";
-import HamBurg from "../images/burger-bar.png";
+import HamBurg from "../images/nav/burger-bar.png";
 const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
@@ -10,7 +10,7 @@ const { id: idName, class: className, ...rest } = Astro.props;
   <div id="mainDiv">
     <div id="navHolder">
       <a href="#section-home" id="section-home-link" class="navtext">Home</a>
-      <a href="#section-tentang" class="navtext">Tentang</a>
+      <a href="#section-tentang" id="section-tentang-link" class="navtext">Tentang</a>
       <img alt="logo sc" src={LogoSC.src} class="navDiv" id="navLogo" />
       <a href="#section-lomba" class="navtext">Lomba</a>
       <a href="" id="section-merch" class="navtext">Merch</a>

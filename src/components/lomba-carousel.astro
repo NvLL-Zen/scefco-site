@@ -1,0 +1,96 @@
+<h1 id="compeitition-title">COMPETITIONS</h1>
+<div id="horizontal-scroll">
+    <div id="carousel-container">
+        <div class="carousel-space"></div>
+        <div class="carousel-item">DIV1</div>
+        <div class="carousel-item">DIV2</div>
+        <div class="carousel-item">DIV3</div>
+        <div class="carousel-item">DIV4</div>
+        <div class="carousel-item">DIV5</div>
+        <div class="carousel-item">DIV6</div>
+        <div class="carousel-item">DIV7</div>
+        <div class="carousel-item">DIV8</div>
+        <div class="carousel-item">DIV9</div>
+        <div class="carousel-space"></div>
+    </div>
+</div>
+
+<style>
+    @keyframes rotate360 {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    #carousel-container {
+        background-color: transparent;
+        border: 5px solid black;
+        width: max-content;
+        height: 50vh;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #horizontal-scroll {
+        width: 100%;
+        overflow-x: scroll;
+        background-color: transparent
+    }
+
+    #compeitition-title {
+        color: black;
+        background-color: transparent;
+    }
+
+    .carousel-item {
+        width: 50vw;
+        height: 40vh;
+        border: 0.5px solid black;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease; /* Add smooth transition for scale */
+    }
+
+    .carousel-space {
+        width: 25vw;
+        height: 40vh;
+        background-color: transparent;
+    }
+
+    .carousel-item.in-view {
+        transform: scale(1.2);
+    }
+</style>
+
+<script>
+    // Target all carousel items
+    const carouselItems = document.querySelectorAll('.carousel-item');
+
+    // Create an intersection observer to track visibility of elements
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view'); // Add scale when in view
+            } else {
+                entry.target.classList.remove('in-view'); // Remove scale when out of view
+            }
+        });
+    }, {
+        threshold: 0.8 // Adjust threshold so element has to be at least 50% visible to trigger
+    });
+
+    // Observe each carousel item
+    carouselItems.forEach(item => {
+        observer.observe(item);
+    });
+</script>
