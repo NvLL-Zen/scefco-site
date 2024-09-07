@@ -2,6 +2,12 @@
 const { id: idName, class: className, ...rest } = Astro.props;
 ---
 
+<style>
+    * {
+        background-color: black;
+    }
+</style>
+
 <div id={idName} class={className} {...rest}>
     <slot />
 </div>

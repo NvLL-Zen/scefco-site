@@ -19,9 +19,8 @@ body {
 * {
     margin: 0;
     padding: 0;
-    background-color: black;
     color: white;
-    /* border: 0.1px solid red; */
+    /* border: 0.1px solid red;  */
     font-family: "Rajdhani", sans-serif;
     width: fit-content;
 }
@@ -67,6 +66,8 @@ h5 {
 
 p {
     font-size: var(--p-fz);
+    background-color: transparent;
+    color: black;
     font-weight: 500;
 }
 
