@@ -9,8 +9,6 @@
         <div class="carousel-item">DIV5</div>
         <div class="carousel-item">DIV6</div>
         <div class="carousel-item">DIV7</div>
-        <div class="carousel-item">DIV8</div>
-        <div class="carousel-item">DIV9</div>
         <div class="carousel-space"></div>
     </div>
 </div>
@@ -28,7 +26,6 @@
 
     #carousel-container {
         background-color: transparent;
-        border: 5px solid black;
         width: max-content;
         height: 50vh;
         padding: 5px;
@@ -93,4 +90,19 @@
     carouselItems.forEach(item => {
         observer.observe(item);
     });
+
+    const container = document.getElementById("horizontal-scroll");
+// where "container" is the id of the container
+  container.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) {
+      container.scrollLeft += 125;
+      e.preventDefault();
+// prevenDefault() will help avoid worrisome 
+// inclusion of vertical scroll 
+    }
+    else {
+      container.scrollLeft -= 125;
+      e.preventDefault();
+    }
+  });
 </script>
