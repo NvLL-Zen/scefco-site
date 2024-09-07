@@ -64,45 +64,55 @@
         background-color: transparent;
     }
 
+    .carousel-item:hover {
+        transform: scale(1.2);
+    }
+
     .carousel-item.in-view {
         transform: scale(1.2);
     }
 </style>
 
 <script>
-    // Target all carousel items
-    const carouselItems = document.querySelectorAll('.carousel-item');
 
-    // Create an intersection observer to track visibility of elements
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view'); // Add scale when in view
-            } else {
-                entry.target.classList.remove('in-view'); // Remove scale when out of view
-            }
-        });
-    }, {
-        threshold: 0.8 // Adjust threshold so element has to be at least 50% visible to trigger
-    });
-
-    // Observe each carousel item
-    carouselItems.forEach(item => {
+    let deviceWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    if(deviceWidth <= 720) {
+        const carouselItems = document.querySelectorAll('.carousel-item')
+        // Create an intersection observer to track visibility of elements
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view'); // Add scale when in view
+                } else {
+                    entry.target.classList.remove('in-view'); // Remove scale when out of view
+                }
+            });
+        }, {
+            threshold: 0.8 // Adjust threshold so element has to be at least 50% visible to trigger
+        })
+        
+        // Observe each carousel item
+        carouselItems.forEach(item => {
         observer.observe(item);
     });
+    } else {
+        console.log("PC Device")
+    }
+    //Target all carousel items
+    
 
-    const container = document.getElementById("horizontal-scroll");
-// where "container" is the id of the container
-  container.addEventListener("wheel", function (e) {
-    if (e.deltaY > 0) {
-      container.scrollLeft += 125;
-      e.preventDefault();
-// prevenDefault() will help avoid worrisome 
-// inclusion of vertical scroll 
-    }
-    else {
-      container.scrollLeft -= 125;
-      e.preventDefault();
-    }
-  });
+//      const container = document.getElementById("horizontal-scroll");
+//  // where "container" is the id of the container
+//    container.addEventListener("wheel", function (e) {
+//      if (e.deltaY > 0) {
+//        container.scrollLeft += 125;
+//        e.preventDefault();
+//  // prevenDefault() will help avoid worrisome 
+//  // inclusion of vertical scroll 
+//      }
+//      else {
+//        container.scrollLeft -= 125;
+//        e.preventDefault();
+//      }
+//    });
 </script>
