@@ -25,24 +25,20 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         <div class="scefSignup">
           <p class="lomba-title pc">English Speech</p>
           <div class="signup-items">
-          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
-            <button>SIGN UP!</button>
-          </a>
-          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
-            <button class="juknis-button">JUKNIS</button>
-          </a>
-        </div>
+            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+              <button>SIGN UP!</button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+              <button class="juknis-button">JUKNIS</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <p class="lomba-title mobile">Esai</p>
       <div class="carousel-item-divider left">
-        <img
-          alt="scefMascots"
-          class="carousel-mascots"
-          src={Esai.src}
-        />
+        <img alt="scefMascots" class="carousel-mascots" src={Esai.src} />
       </div>
       <div class="carousel-item-divider right">
         <div class="scefSignup">
@@ -61,11 +57,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
     <div class="carousel-item">
       <p class="lomba-title mobile">Futsal</p>
       <div class="carousel-item-divider left">
-        <img
-          alt="scefMascots"
-          class="carousel-mascots"
-          src={Futsal.src}
-        />
+        <img alt="scefMascots" class="carousel-mascots" src={Futsal.src} />
       </div>
       <div class="carousel-item-divider right">
         <div class="scefSignup">
@@ -84,11 +76,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
     <div class="carousel-item">
       <p class="lomba-title mobile">MHQ</p>
       <div class="carousel-item-divider left">
-        <img
-          alt="scefMascots"
-          class="carousel-mascots"
-          src={Mhq.src}
-        />
+        <img alt="scefMascots" class="carousel-mascots" src={Mhq.src} />
       </div>
       <div class="carousel-item-divider right">
         <div class="scefSignup">
@@ -107,11 +95,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
     <div class="carousel-item">
       <p class="lomba-title mobile">Pidato Arab</p>
       <div class="carousel-item-divider left">
-        <img
-          alt="scefMascots"
-          class="carousel-mascots"
-          src={PidatoArab.src}
-        />
+        <img alt="scefMascots" class="carousel-mascots" src={PidatoArab.src} />
       </div>
       <div class="carousel-item-divider right">
         <div class="scefSignup">
@@ -153,11 +137,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
     <div class="carousel-item">
       <p class="lomba-title mobile">Tari Saman</p>
       <div class="carousel-item-divider left">
-        <img
-          alt="scefMascots"
-          class="carousel-mascots"
-          src={tariSaman.src}
-        />
+        <img alt="scefMascots" class="carousel-mascots" src={tariSaman.src} />
       </div>
       <div class="carousel-item-divider right">
         <div class="scefSignup">
@@ -369,21 +349,31 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         carouselItems.forEach((item) => {
           observer.observe(item);
         });
-        } else {
-          console.log("PC Device");
-        }
+      } else {
+        console.log("PC Device");
+      }
 
-        document.addEventListener("DOMContentLoaded", function () {
-          const container = document.getElementById("horizontal-scroll");
-          const carouselItems = document.querySelectorAll(".carousel-item");
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("horizontal-scroll");
+        const carouselItems = document.querySelectorAll(".carousel-item");
 
-          // Adjust this index to target the 4th item (index 3 for zero-based indexing)
-          const targetItemIndex = 3;
-          const targetItem = carouselItems[targetItemIndex];
+        // Adjust this index to target the 4th item (index 3 for zero-based indexing)
+        const targetItemIndex = 3;
+        const targetItem = carouselItems[targetItemIndex];
 
-          // Scroll the container to the left position of the 4th item
-          container.scrollLeft = targetItem.offsetLeft - container.offsetWidth / 2 + targetItem.offsetWidth / 2;
+        // Calculate the distance between the container and the target item
+        const targetPosition = targetItem.offsetLeft - container.offsetLeft;
+
+        // Scroll the container to the target position smoothly
+        container.scrollTo({
+          left:
+            targetPosition -
+            container.clientWidth / 2 +
+            targetItem.clientWidth / 2, // Center the item
+          behavior: "smooth", // Smooth scrolling
         });
+      });
+
       //Target all carousel items
 
       //      const container = document.getElementById("horizontal-scroll");
