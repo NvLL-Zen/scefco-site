@@ -406,7 +406,7 @@ iframe {
         word-spacing: 2vw;
     }
 
-    /* #days {
+    #days {
         color: #000000;
     }
     
@@ -420,7 +420,7 @@ iframe {
     
     #seconds {
         color: #000000;
-    } */
+    }
 
     
 }
@@ -432,7 +432,7 @@ iframe {
     }
 
     #section-countdown {
-        background-image:url("../images/backgrounds/fourseasons2.jpeg");
+        background-image:url("../images/backgrounds/Footer_BG.jpg");
         background-size: 100% 45%;
         background-position: unset;
         height: 45vh;
@@ -527,9 +527,9 @@ iframe {
         margin-bottom: 20px;
     }
 
-    /* .countdownText {
+    .countdownText {
         text-shadow: none;
-    } */
+    }
 
     .Footer {
         flex-direction: column;
