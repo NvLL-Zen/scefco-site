@@ -11,7 +11,9 @@ const { id: idName, class: className, ...rest } = Astro.props;
     <div id="navHolder">
       <a href="#section-home" id="section-home-link" class="navtext">Home</a>
       <a href="#section-tentang" id="section-tentang-link" class="navtext">Tentang</a>
-      <img alt="logo sc" src={LogoSC.src} class="navDiv" id="navLogo" />
+      <a href="#section-countdown">
+        <img alt="logo sc" src={LogoSC.src} class="navDiv" id="navLogo" />
+      </a>
       <a href="#section-lomba" class="navtext">Lomba</a>
       <a href="" id="section-merch" class="navtext">Merch</a>
     </div>

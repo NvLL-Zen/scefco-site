@@ -369,9 +369,21 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         carouselItems.forEach((item) => {
           observer.observe(item);
         });
-      } else {
-        console.log("PC Device");
-      }
+        } else {
+          console.log("PC Device");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("horizontal-scroll");
+          const carouselItems = document.querySelectorAll(".carousel-item");
+
+          // Adjust this index to target the 4th item (index 3 for zero-based indexing)
+          const targetItemIndex = 3;
+          const targetItem = carouselItems[targetItemIndex];
+
+          // Scroll the container to the left position of the 4th item
+          container.scrollLeft = targetItem.offsetLeft - container.offsetWidth / 2 + targetItem.offsetWidth / 2;
+        });
       //Target all carousel items
 
       //      const container = document.getElementById("horizontal-scroll");
