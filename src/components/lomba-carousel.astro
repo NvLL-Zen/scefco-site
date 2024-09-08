@@ -216,7 +216,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
       }
 
       p {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         font-size: calc(var(--p-fz) + 1vw);
         font-weight: 700;
       }
@@ -229,7 +229,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
       }
 
       button {
-        width: 175px;
+        width: fit-content;
         color: black;
         background: transparent;
         border: 0.75px solid black;
@@ -237,6 +237,8 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         font-size: calc(var(--p-fz) + 0.5vw);
         transition: all 0.3s ease;
         padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
         font-weight: 700;
       }
 
@@ -285,6 +287,12 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
           /* border: 1px solid red; */
         }
 
+        #horizontal-scroll {
+          height: 65vh;
+          display: flex;
+          align-items: center;
+        }
+
         .carousel-item-divider {
           width: 100%;
           height: 50%;
@@ -297,20 +305,19 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
 
         .carousel-item {
           flex-direction: column;
+          height: 50vh;
         }
 
         .signup-items {
           display: flex;
           flex-direction: column;
+          gap: 10px;
         }
 
         .carousel-space {
           width: 22vw;
         }
 
-        .juknis-button {
-          margin-top: 7.5px;
-        }
 
         .pc {
           display: none;
@@ -319,6 +326,7 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         .mobile {
           display: inline;
         }
+
       }
     </style>
 
