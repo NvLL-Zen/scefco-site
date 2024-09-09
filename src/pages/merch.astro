@@ -1,0 +1,52 @@
+---
+import "../styles/style.css"
+import Nav from "../components/betternav.astro";
+import Main from "../layouts/main.astro";
+import Section from "../components/section.astro";
+---
+<style>
+    * {
+        border: 1px solid red;
+    }
+</style>
+<Main>
+    <Nav />
+    <Section id="nav-spacer" />
+    <Section id="section-main">
+        <h1 id="title">SCEFMERCH</h1>
+        <div id="catalog">
+            <h1>catalog</h1>
+        </div>
+    </Section>
+</Main>
+<style>
+    :root {
+        --general-padding: 1vw;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    #nav-spacer {
+        height: 10vh;
+    }
+    #section-main {
+        margin: 0 auto;
+        width: 100vw;
+        height: 85vh;
+        text-align: center;
+        display: flex;
+        justify-content: left;
+        border-top: 1px solid black;
+        padding-left: var(--general-padding);
+        padding-right: var(--general-padding);
+        margin
+    }
+
+    #catalog {
+        width: 100vw;
+        height: 80vh;
+    }
+</style>

@@ -19,9 +19,9 @@ body {
 * {
     margin: 0;
     padding: 0;
-    color: white;
+    color: black;
     /* border: 0.1px solid red;  */
-    font-family: "Rajdhani", sans-serif;
+    font-family: "Poppins";
     width: fit-content;
 }
 
@@ -156,7 +156,7 @@ p {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
-    font-family: "Red Hat Display", sans-serif;
+    /* font-family: "Red Hat Display", sans-serif; */
     display: flex;
     flex-direction: row;
 }
@@ -186,15 +186,25 @@ p {
 #tentang-main{
     width: 50vw;
     height: 60vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
     background-color: white;
     align-items: flex-start;
 }
 #tentang-main-text {
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     background-color: white;
+}
+
+#tentang-paragraph {
+    font-size: var(--p-fz);
+    display: flex;
+    text-align:center;
+    word-spacing: 0px;
+    margin: 0;
+    padding: 0;
+    width: 95%;
 }
 
 #tentang-photo {
@@ -256,13 +266,6 @@ p {
     background-size: cover;
 }
 
-#tentang-paragraph {
-    font-size: var(--p-fz);
-    display: flex;
-    margin: 0;
-    width: 97.5%;
-}
-
 #tentang-title {
     width: 100%;
     font-size: var(--h4-fz);
@@ -289,7 +292,7 @@ p {
     width: 23%;
     background-color: transparent;
     text-shadow: 3px 3px  5px black;
-    font-family: "Red Hat Display", sans-serif;
+    /* font-family: "Red Hat Display", sans-serif; */
 }
 
 .countdownDot {
@@ -342,7 +345,8 @@ p {
 }
 
 #footer-contact {
-    margin-right: 5vw;
+    margin-right: 3vw;
+    width: 22vw;
 }
 
 #footer-location {
@@ -525,6 +529,7 @@ iframe {
 
     #footer-contact {
         margin-right: 0;
+        width: 75vw;
     }
 
     #footer-location {
