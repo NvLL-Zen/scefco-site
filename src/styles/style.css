@@ -365,6 +365,10 @@ iframe {
     border-radius: 10px;
 }
 
+.footer-contact {
+    font-weight: 400;
+}
+
 .footer-links {
     border: 0px;
     font-size: var(--p-fz);
