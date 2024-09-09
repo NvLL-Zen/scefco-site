@@ -166,6 +166,11 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         }
       }
 
+      .active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+      }
+
       #carousel-container {
         background-color: transparent;
         width: max-content;
@@ -240,11 +245,27 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         padding-left: 10px;
         padding-right: 10px;
         font-weight: 700;
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
       }
 
       button:hover {
         background: black;
         color: white;
+      }
+
+      img{
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+
       }
 
       .carousel-item {
@@ -318,7 +339,6 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
           width: 22vw;
         }
 
-
         .pc {
           display: none;
         }
@@ -326,7 +346,6 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
         .mobile {
           display: inline;
         }
-
       }
     </style>
 
@@ -358,7 +377,33 @@ import tariSaman from "../images/scefMascots/tariSaman.png";
           observer.observe(item);
         });
       } else {
-        console.log("PC Device");
+        const slider = document.querySelector("#horizontal-scroll");
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+          isDown = true;
+          slider.classList.add("active");
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener("mouseleave", () => {
+          isDown = false;
+          slider.classList.remove("active");
+        });
+        slider.addEventListener("mouseup", () => {
+          isDown = false;
+          slider.classList.remove("active");
+        });
+        slider.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 3; //scroll-fast
+          slider.scrollLeft = scrollLeft - walk;
+          console.log(walk);
+        });
       }
 
       document.addEventListener("DOMContentLoaded", function () {
