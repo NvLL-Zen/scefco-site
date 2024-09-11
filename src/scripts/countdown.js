@@ -1,6 +1,6 @@
 function countdown() {
     const now = new Date().getTime();
-    const eventDate = new Date('November 11, 2024 00:00:00').getTime();
+    const eventDate = new Date('November 02, 2024 00:00:00').getTime();
     const distance = eventDate - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
