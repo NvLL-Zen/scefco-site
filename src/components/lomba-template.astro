@@ -1,0 +1,229 @@
+---
+const { namaLomba, photo } = Astro.props;
+---
+
+<div class="carousel-item">
+    <p class="lomba-title mobile">{namaLomba}</p>
+    <div class="carousel-item-divider left">
+      <img
+        alt="scefMascots"
+        class="carousel-mascots"
+        src={photo.src}
+      />
+    </div>
+    <div class="carousel-item-divider right">
+      <div class="scefSignup">
+        <p class="lomba-title pc">{namaLomba}</p>
+        <div class="signup-items">
+          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+            <button>SIGN UP!</button>
+          </a>
+          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+            <button class="juknis-button">JUKNIS</button>
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <style>
+    /* * {
+      border: 1px solid red;
+    } */
+    @keyframes rotate360 {
+      from {
+        transform: rotateY(0deg);
+      }
+
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    #carousel-container {
+      background-color: transparent;
+      width: max-content;
+      height: 50vh;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #horizontal-scroll {
+      width: 100%;
+      overflow-x: scroll;
+      background-color: transparent;
+    }
+
+    #compeitition-title {
+      color: black;
+      background-color: transparent;
+    }
+
+    .carousel-item-divider {
+      background-color: transparent;
+      width: 50%;
+      height: 100%;
+      /* border: 3px solid purple; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left {
+      width: 35vh;
+    }
+
+    .right {
+      justify-content: center;
+    }
+
+    .carousel-mascots {
+      width: 40vw;
+      height: 40vw;
+      max-width: 35vh;
+      max-height: 35vh;
+    }
+
+    .scefSignup {
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      align-items: center;
+    }
+
+    p {
+      margin-bottom: 5px;
+      font-size: calc(var(--p-fz) + 1vw);
+      font-weight: 700;
+    }
+
+    a {
+      width: 100%;
+      color: black;
+      background: transparent;
+      text-align: center;
+    }
+
+    button {
+      width: fit-content;
+      color: black;
+      background: transparent;
+      border: 0.75px solid black;
+      border-radius: 9px;
+      font-size: calc(var(--p-fz) + 0.5vw);
+      transition: all 0.3s ease;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-weight: 700;
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    button:hover {
+      background: black;
+      color: white;
+    }
+
+    img{
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      pointer-events: none;
+    }
+
+    .carousel-item {
+      width: 40vw;
+      height: 40vh;
+      border: 0.5px solid black;
+      border-radius: 10px;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease; /* Add smooth transition for scale */
+    }
+
+    .carousel-space {
+      width: 28vw;
+      height: 40vh;
+      background-color: transparent;
+    }
+
+    .carousel-item:hover {
+      transform: scale(1.2);
+    }
+
+    .carousel-item.in-view {
+      transform: scale(1.2);
+    }
+
+    .pc {
+      display: inline;
+    }
+
+    .mobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: 720px) {
+      * {
+        /* border: 1px solid red; */
+      }
+
+      #horizontal-scroll {
+        height: 65vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .carousel-item-divider {
+        width: 100%;
+        height: 50%;
+      }
+
+      .right {
+        height: 30%;
+        justify-content: center;
+      }
+
+      .carousel-item {
+        flex-direction: column;
+        width: 50vw;
+        height: 50vh;
+      }
+
+      .signup-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .carousel-space {
+        width: 22vw;
+      }
+
+      .pc {
+        display: none;
+      }
+
+      .mobile {
+        display: inline;
+      }
+    }
+  </style>
