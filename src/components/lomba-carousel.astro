@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import EnglishSpeech from "../images/scefMascots/englishSpeech.png";
 import Esai from "../images/scefMascots/esai.png";
 import Futsal from "../images/scefMascots/futsal.png";
@@ -7,9 +8,10 @@ import PidatoArab from "../images/scefMascots/pidatoArab.png";
 import StoryTelling from "../images/scefMascots/storyTelling.png";
 import tariSaman from "../images/scefMascots/tariSaman.png";
 import LombaTemplate from "./lomba-template.astro";
+import Competitions_Title from "../images/titles/comps.png"
 ---
 
-<h1 id="compeitition-title" class="hoverPop">COMPETITIONS</h1>
+<Image id="comp_title" src={Competitions_Title} alt="Competitions"></Image>
 <div id="horizontal-scroll">
   <div id="carousel-container">
     <div class="carousel-space"></div>
@@ -21,267 +23,98 @@ import LombaTemplate from "./lomba-template.astro";
     <LombaTemplate namaLomba="Story Telling" photo={StoryTelling}></LombaTemplate>
     <LombaTemplate namaLomba="Tari Saman" photo={tariSaman}></LombaTemplate>
     <div class="carousel-space"></div>
+  </div>
+</div>
 
-    <style>
-      /* * {
-        border: 1px solid red;
-      } */
-      @keyframes rotate360 {
-        from {
-          transform: rotateY(0deg);
-        }
+<style>
+  #carousel-container {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    align-items: center;
+    height: 60vh;
+    background-color: transparent;
+    width: max-content;
+  }
 
-        to {
-          transform: rotateY(360deg);
-        }
-      }
+  #horizontal-scroll {
+    width: 100%;
+    overflow-x: scroll;
+    cursor: grab;
+    background-color: transparent;
+  }
 
-      .active {
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
-      }
+  #horizontal-scroll.active {
+    cursor: grabbing;
+  }
 
-      #carousel-container {
-        background-color: transparent;
-        width: max-content;
-        height: 50vh;
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+  #comp_title {
+    width: 40vw;
+    height: 8vw;
+  }
 
-      #horizontal-scroll {
-        width: 100%;
-        overflow-x: scroll;
-        background-color: transparent;
-      }
+  .carousel-space {
+    width: 28vw;
+    height: 40vh;
+    background-color: transparent;
+  }
 
-      #compeitition-title {
-        color: black;
-        background-color: transparent;
-      }
+  .carousel-item {
+    width: 40vw;
+    height: 40vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
 
-      .carousel-item-divider {
-        background-color: transparent;
-        width: 50%;
-        height: 100%;
-        /* border: 3px solid purple; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .carousel-item:hover {
+    transform: scale(1.2);
+  }
 
-      .left {
-        width: 35vh;
-      }
+  @media only screen and (max-width: 720px) {
+    #comp_title {
+      width: 50vw;
+      height: 10vw;
+  
+    }
+  }
+</style>
 
-      .right {
-        justify-content: center;
-      }
+<script>
+  const slider = document.querySelector("#horizontal-scroll");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-      .carousel-mascots {
-        width: 40vw;
-        height: 40vw;
-        max-width: 35vh;
-        max-height: 35vh;
-      }
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
 
-      .scefSignup {
-        display: flex;
-        flex-direction: column;
-        background-color: transparent;
-        align-items: center;
-      }
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
 
-      p {
-        margin-bottom: 5px;
-        font-size: calc(var(--p-fz) + 1vw);
-        font-weight: 700;
-      }
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
 
-      a {
-        width: 100%;
-        color: black;
-        background: transparent;
-        text-align: center;
-      }
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust scrolling speed
+    slider.scrollLeft = scrollLeft - walk;
+  });
 
-      button {
-        width: fit-content;
-        color: black;
-        background: transparent;
-        border: 0.75px solid black;
-        border-radius: 9px;
-        font-size: calc(var(--p-fz) + 0.5vw);
-        transition: all 0.3s ease;
-        padding: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-weight: 700;
-        user-drag: none;
-        -webkit-user-drag: none;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-      }
-
-      button:hover {
-        background: black;
-        color: white;
-      }
-
-      img{
-        user-drag: none;
-        -webkit-user-drag: none;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        pointer-events: none;
-      }
-
-      .carousel-item {
-        width: 40vw;
-        height: 40vh;
-        border: 0.5px solid black;
-        border-radius: 10px;
-        background-color: white;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease; /* Add smooth transition for scale */
-      }
-
-      .carousel-space {
-        width: 28vw;
-        height: 40vh;
-        background-color: transparent;
-      }
-
-      .carousel-item:hover {
-        transform: scale(1.2);
-      }
-
-      .carousel-item.in-view {
-        transform: scale(1.2);
-      }
-
-      .pc {
-        display: inline;
-      }
-
-      .mobile {
-        display: none;
-      }
-
-      @media only screen and (max-width: 720px) {
-        * {
-          /* border: 1px solid red; */
-        }
-
-        #horizontal-scroll {
-          height: 65vh;
-          display: flex;
-          align-items: center;
-        }
-
-        .carousel-item-divider {
-          width: 100%;
-          height: 50%;
-        }
-
-        .right {
-          height: 30%;
-          justify-content: center;
-        }
-
-        .carousel-item {
-          flex-direction: column;
-          width: 50vw;
-          height: 50vh;
-        }
-
-        .signup-items {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .carousel-space {
-          width: 22vw;
-        }
-
-        .pc {
-          display: none;
-        }
-
-        .mobile {
-          display: inline;
-        }
-      }
-    </style>
-
-    <script>
-      let deviceWidth = Math.max(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
-      );
-      if (deviceWidth <= 1024) {
-        const carouselItems = document.querySelectorAll(".carousel-item");
-        // Create an intersection observer to track visibility of elements
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view"); // Add scale when in view
-              } else {
-                entry.target.classList.remove("in-view"); // Remove scale when out of view
-              }
-            });
-          },
-          {
-            threshold: 0.75, // Adjust threshold so element has to be at least 50% visible to trigger
-          }
-        );
-
-        // Observe each carousel item
-        carouselItems.forEach((item) => {
-          observer.observe(item);
-        });
-      } else {
-        const slider = document.querySelector("#horizontal-scroll");
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        slider.addEventListener("mousedown", (e) => {
-          isDown = true;
-          slider.classList.add("active");
-          startX = e.pageX - slider.offsetLeft;
-          scrollLeft = slider.scrollLeft;
-        });
-        slider.addEventListener("mouseleave", () => {
-          isDown = false;
-          slider.classList.remove("active");
-        });
-        slider.addEventListener("mouseup", () => {
-          isDown = false;
-          slider.classList.remove("active");
-        });
-        slider.addEventListener("mousemove", (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - slider.offsetLeft;
-          const walk = (x - startX) * 3; //scroll-fast
-          slider.scrollLeft = scrollLeft - walk;
-          console.log(walk);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById("horizontal-scroll");
         const carouselItems = document.querySelectorAll(".carousel-item");
 
@@ -301,23 +134,5 @@ import LombaTemplate from "./lomba-template.astro";
           behavior: "smooth", // Smooth scrolling
         });
       });
+</script>
 
-      //Target all carousel items
-
-      //      const container = document.getElementById("horizontal-scroll");
-      //  // where "container" is the id of the container
-      //    container.addEventListener("wheel", function (e) {
-      //      if (e.deltaY > 0) {
-      //        container.scrollLeft += 125;
-      //        e.preventDefault();
-      //  // prevenDefault() will help avoid worrisome
-      //  // inclusion of vertical scroll
-      //      }
-      //      else {
-      //        container.scrollLeft -= 125;
-      //        e.preventDefault();
-      //      }
-      //    });
-    </script>
-  </div>
-</div>

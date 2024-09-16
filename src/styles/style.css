@@ -163,7 +163,7 @@ p {
 
 #section-home {
     align-items: center;
-    background-image: url('../images/backgrounds/scefart.jpg');
+    background-image: url('../images/backgrounds/ScefBG.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: black;
@@ -171,9 +171,8 @@ p {
 
 #section-tentang {
     color: black;
-    background-color: #ffd8b3;
+    background-color: transparent;
     height: 100vh;
-    border: 1px solid black;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
@@ -234,7 +233,7 @@ p {
 } */
 
 #section-trailer {
-    background-color: #F3F39B;
+    background-color: transparent;
     align-items: center;
 }
 
@@ -251,8 +250,12 @@ p {
     height: 30vw;
 }
 
+#trailer-title {
+    width: 20vw;
+    height: 10vw;
+}
+
 .trailer-section {
-    background-color: white;
     color: black;
     text-align: center;
 }
@@ -267,6 +270,16 @@ p {
 #tentang-title {
     width: 100%;
     font-size: var(--h4-fz);
+}
+
+#section-tentang-trailer {
+    height: 200vh;
+    background-image: url("../images/backgrounds/trailer_tentang.png");
+    background-size: 100% 100%;
+}
+
+#section-trailer {
+    height: 100vh;
 }
 
 #lomba-title {
@@ -318,8 +331,7 @@ p {
 }
 
 .Footer {
-    border-top: 1px solid black;
-    background-color: #DCECFC;
+    background: linear-gradient(180deg, #ACE9FF 0%, #DCECFC 75%);
     background-size: 100% 100%;
     height: 55vh;
     width: 100%;
@@ -335,7 +347,7 @@ p {
 }
 
 .Footer-Section {
-    background-color: #DCECFC;
+    background-color: transparent;
     color: black;
     width: 20vw;
     height: 25vh;
@@ -454,6 +466,11 @@ iframe {
     #trailer-video {
         width: 70vw;
         height: 40vw;
+    }
+
+    #trailer-title {
+        width: 30vw;
+        height: 15vw;
     }
 
     #tentang-main {

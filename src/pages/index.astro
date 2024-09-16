@@ -2,6 +2,7 @@
 import Main from "../layouts/main.astro";
 import Footer from "../components/footer.astro";
 import Logo_SC from '../images/logo/sceflogo.jpg'
+import Trailer from "../images/titles/teaser.png"
 import Nav from "../components/betternav.astro";
 import Section from "../components/section.astro";
 import LombaCarousel from "../components/lomba-carousel.astro";
@@ -32,9 +33,10 @@ import { defineConfig, passthroughImageService } from "astro/config";
     <Section id="section-lomba" class="section-lomba">
         <LombaCarousel />
     </Section>
+    <Section id="section-tentang-trailer">
     <Section id="section-trailer">
+        <Image id="trailer-title" src={Trailer} alt="trailer"></Image>
         <div id="trailer-main" class="trailer-section">
-            <h1 class="trailer-section"></h1>
             <iframe class="trailer-section" id="trailer-video" src="https://www.youtube.com/embed/2r315WCynpM" title="SCEFCO 2024, COMING SOON ‼️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </Section>
@@ -53,6 +55,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
         <div id="tentang-photo">
             <img src={Logo_SC.src} alt="LOGO SC" id="sc-pic" class="tentang hoverPop">
         </div>
+    </Section>
     </Section>
     <Footer class="Footer">
         <div class="Footer-Section" id="footer-contact">
