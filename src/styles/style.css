@@ -3,7 +3,7 @@
     --h2-fz: 2vw;
     --h4-fz: 3.5vw;
     --h5-fz: clamp(20px, 3vw, 50px);
-    --nav-fz: 2vw;
+    --nav-fz: 1.75vw;
     --p-fz: 1.5vw;
 }
 
@@ -94,7 +94,7 @@ p {
 }
 
 #navHolder {
-    margin-left: -1vw;
+    margin-left: 0.25vw;
     color: black;
     background-color: white;
     align-items: center;
@@ -176,11 +176,12 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
+    padding-top: 2.5vw;
 }
 
 #section-lomba {
     align-items: center;
-    background-color: #BDF0C6;
+    background: linear-gradient(180deg, #BDF0C6 90%, #3991f2 100%);
 }
 
 #tentang-main{
@@ -246,13 +247,15 @@ p {
 }
 
 #trailer-video {
-    width: 60vw;
-    height: 30vw;
+    width: 45vw;
+    height: 22.5vw;
 }
 
 #trailer-title {
-    width: 20vw;
-    height: 10vw;
+    width: 30vw;
+    height: 15vw;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
 }
 
 .trailer-section {
@@ -331,7 +334,7 @@ p {
 }
 
 .Footer {
-    background: linear-gradient(180deg, #ACE9FF 0%, #DCECFC 75%);
+    background: linear-gradient(180deg, #ACE9FF 5%, #DCECFC 75%);
     background-size: 100% 100%;
     height: 55vh;
     width: 100%;
@@ -479,6 +482,7 @@ iframe {
     }
 
     #tentang-photo {
+        margin-top: 5vw;
         justify-content: center;
         width: 100vw;
         height: 30vh;
