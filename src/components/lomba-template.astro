@@ -1,14 +1,15 @@
 ---
 const { namaLomba, photo } = Astro.props;
+import Image from "astro/components/Image.astro";
 ---
 
 <div class="carousel-item">
     <p class="lomba-title mobile">{namaLomba}</p>
     <div class="carousel-item-divider left">
-      <img
+      <Image
         alt="scefMascots"
         class="carousel-mascots"
-        src={photo.src}
+        src={photo}
       />
     </div>
     <div class="carousel-item-divider right">
