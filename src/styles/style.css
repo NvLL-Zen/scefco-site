@@ -115,8 +115,8 @@ p {
 }
 
 .hamburg {
-    width: clamp(50px, 4vw, 100px);
-    height: clamp(50px, 4vw, 100px);
+    width: 50px;
+    height: 50px;
 }
 
 #navLogo {
@@ -181,7 +181,7 @@ p {
 
 #section-lomba {
     align-items: center;
-    background: linear-gradient(180deg, #BDF0C6 90%, #3991f2 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%,#4BAA8F 2%, #BDF0C6 85%, #3991f2 100%);
 }
 
 #tentang-main{
@@ -277,8 +277,9 @@ p {
 
 #section-tentang-trailer {
     height: 200vh;
-    background-image: url("../images/backgrounds/trailer_tentang.png");
+    /* background-image: url("../images/backgrounds/trailer_tentang.png"); */
     background-size: 100% 100%;
+    background: linear-gradient(180deg, #3991f2 0%,#ACE9FF 100%);
 }
 
 #section-trailer {
@@ -461,6 +462,12 @@ iframe {
         height: 45vh;
     }
 
+    #section-tentang-trailer {
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 120vh;
+    }
+
     #trailer-main {
         width: 70vw;
         height: 40vw;
@@ -472,8 +479,12 @@ iframe {
     }
 
     #trailer-title {
-        width: 30vw;
-        height: 15vw;
+        width: 45vw;
+        height: 22.5vw;
+    }
+
+    #section-trailer {
+        height: 40vh;
     }
 
     #tentang-main {
@@ -535,8 +546,8 @@ iframe {
     }
 
     .hamburg {
-        width: clamp(50px, 7.5vh, 100px);
-        height: clamp(50px, 7.5vh, 100px);
+        width: 50px;
+        height: 50px;
         background-color: white;
     }
 
@@ -553,6 +564,7 @@ iframe {
     }
 
     #footer-location {
+        padding-bottom: 50px;
         margin-left: 0;
         margin-bottom: 20px;
     }
