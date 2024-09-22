@@ -463,6 +463,10 @@ iframe {
         height: 45vh;
     }
 
+    #section-home {
+        height: 56.25vw;
+    }
+
     #section-tentang-trailer {
         align-items: flex-start;
         justify-content: flex-start;
