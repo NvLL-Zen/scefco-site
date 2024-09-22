@@ -8,20 +8,20 @@ import PidatoArab from "../images/scefMascots/pidatoArab.png";
 import StoryTelling from "../images/scefMascots/storyTelling.png";
 import tariSaman from "../images/scefMascots/tariSaman.png";
 import LombaTemplate from "./lomba-template.astro";
-import Competitions_Title from "../images/titles/comps.png"
+import Competitions_Title from "../images/titles/comps.png";
 ---
 
-<Image id="comp_title" src={Competitions_Title} alt="Competitions"></Image>
+<Image id="comp_title" src={Competitions_Title} alt="Competitions" />
 <div id="horizontal-scroll">
   <div id="carousel-container">
     <div class="carousel-space"></div>
-    <LombaTemplate namaLomba="English Speech" photo={EnglishSpeech}></LombaTemplate>
-    <LombaTemplate namaLomba="Esai" photo={Esai}></LombaTemplate>
-    <LombaTemplate namaLomba="Futsal" photo={Futsal}></LombaTemplate>
-    <LombaTemplate namaLomba="MHQ" photo={Mhq}></LombaTemplate>
-    <LombaTemplate namaLomba="Pidato Arab" photo={PidatoArab}></LombaTemplate>
-    <LombaTemplate namaLomba="Story Telling" photo={StoryTelling}></LombaTemplate>
-    <LombaTemplate namaLomba="Tari Saman" photo={tariSaman}></LombaTemplate>
+    <LombaTemplate namaLomba="English Speech" photo={EnglishSpeech} />
+    <LombaTemplate namaLomba="Esai" photo={Esai} />
+    <LombaTemplate namaLomba="Futsal" photo={Futsal} />
+    <LombaTemplate namaLomba="MHQ" photo={Mhq} />
+    <LombaTemplate namaLomba="Pidato Arab" photo={PidatoArab} />
+    <LombaTemplate namaLomba="Story Telling" photo={StoryTelling} />
+    <LombaTemplate namaLomba="Tari Saman" photo={tariSaman} />
     <div class="carousel-space"></div>
   </div>
 </div>
@@ -78,61 +78,87 @@ import Competitions_Title from "../images/titles/comps.png"
     #comp_title {
       width: 75vw;
       height: 15vw;
-  
     }
   }
 </style>
 
 <script>
-  const slider = document.querySelector("#horizontal-scroll");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    slider.classList.add("active");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-
-  slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-
-  slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust scrolling speed
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-        const container = document.getElementById("horizontal-scroll");
-        const carouselItems = document.querySelectorAll(".carousel-item");
-
-        // Adjust this index to target the 4th item (index 3 for zero-based indexing)
-        const targetItemIndex = 3;
-        const targetItem = carouselItems[targetItemIndex];
-
-        // Calculate the distance between the container and the target item
-        const targetPosition = targetItem.offsetLeft - container.offsetLeft;
-
-        // Scroll the container to the target position smoothly
-        container.scrollTo({
-          left:
-            targetPosition -
-            container.clientWidth / 2 +
-            targetItem.clientWidth / 2, // Center the item
-          behavior: "smooth", // Smooth scrolling
+  let deviceWidth = Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
+  );
+  if (deviceWidth <= 720) {
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    // Create an intersection observer to track visibility of elements
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view"); // Add scale when in view
+          } else {
+            entry.target.classList.remove("in-view"); // Remove scale when out of view
+          }
         });
-      });
-</script>
+      },
+      {
+        threshold: 0.8, // Adjust threshold so element has to be at least 50% visible to trigger
+      }
+    );
 
+    // Observe each carousel item
+    carouselItems.forEach((item) => {
+      observer.observe(item);
+    });
+  } else {
+    const slider = document.querySelector("#horizontal-scroll");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+      isDown = true;
+      slider.classList.add("active");
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      isDown = false;
+      slider.classList.remove("active");
+    });
+
+    slider.addEventListener("mouseup", () => {
+      isDown = false;
+      slider.classList.remove("active");
+    });
+
+    slider.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust scrolling speed
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("horizontal-scroll");
+      const carouselItems = document.querySelectorAll(".carousel-item");
+
+      // Adjust this index to target the 4th item (index 3 for zero-based indexing)
+      const targetItemIndex = 3;
+      const targetItem = carouselItems[targetItemIndex];
+
+      // Calculate the distance between the container and the target item
+      const targetPosition = targetItem.offsetLeft - container.offsetLeft;
+
+      // Scroll the container to the target position smoothly
+      container.scrollTo({
+        left:
+          targetPosition -
+          container.clientWidth / 2 +
+          targetItem.clientWidth / 2, // Center the item
+        behavior: "smooth", // Smooth scrolling
+      });
+    });
+  }
+</script>
