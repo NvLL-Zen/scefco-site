@@ -1,5 +1,5 @@
 ---
-const { namaLomba, photo } = Astro.props;
+const { namaLomba, photo, linkLomba } = Astro.props;
 import Image from "astro/components/Image.astro";
 ---
 
@@ -16,7 +16,7 @@ import Image from "astro/components/Image.astro";
       <div class="scefSignup">
         <p class="lomba-title pc">{namaLomba}</p>
         <div class="signup-items">
-          <a href="https://drive.google.com/drive/folders/1vPVKe9rRwh5oatG8SzF4QJDUI9gEBbhw?usp=sharing">
+          <a href={linkLomba}>
             <button>SIGN UP!</button>
           </a>
           <a href="https://drive.google.com/drive/folders/1vPVKe9rRwh5oatG8SzF4QJDUI9gEBbhw?usp=sharing">
