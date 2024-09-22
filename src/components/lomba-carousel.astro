@@ -15,17 +15,69 @@ import Competitions_Title from "../images/titles/comps.png";
 <div id="horizontal-scroll">
   <div id="carousel-container">
     <div class="carousel-space"></div>
-    <LombaTemplate namaLomba="English Speech" photo={EnglishSpeech} linkLomba="https://forms.gle/HmvtymrcQgA1xF839"/>
-    <LombaTemplate namaLomba="Esai" photo={Esai} linkLomba="https://forms.gle/LC3ArzKBXQ1Pm4VbA"/>
-    <LombaTemplate namaLomba="Futsal" photo={Futsal} linkLomba="https://forms.gle/HXyC6HAnxPRnPf6t8"/>
-    <LombaTemplate namaLomba="MHQ" photo={Mhq} linkLomba="https://forms.gle/ZQbzk7jMHWyc21Fy7"/>
-    <LombaTemplate namaLomba="Pidato Arab" photo={PidatoArab} linkLomba="https://forms.gle/fJXbea5QgEvafgTH9"/>
-    <LombaTemplate namaLomba="Story Telling" photo={StoryTelling} linkLomba="https://forms.gle/BHAfiC8U7Nd6eA2A8"/>
-    <LombaTemplate namaLomba="Ratoh Jaroe" photo={RatohJaroe} linkLomba="https://forms.gle/MfqjyM3XqWQuF6Zt7"/>
+    <LombaTemplate id="EnglishSpeech" class="cards" namaLomba="ENGLISH SPEECH" photo={EnglishSpeech} linkLomba="https://forms.gle/HmvtymrcQgA1xF839"/>
+    <LombaTemplate id="Esai"          class="cards" namaLomba="ESAI" photo={Esai} linkLomba="https://forms.gle/LC3ArzKBXQ1Pm4VbA"/>
+    <LombaTemplate id="Futsal"        class="cards" namaLomba="FUTSAL" photo={Futsal} linkLomba="https://forms.gle/HXyC6HAnxPRnPf6t8"/>
+    <LombaTemplate id="Mhq"           class="cards" namaLomba="MHQ" photo={Mhq} linkLomba="https://forms.gle/ZQbzk7jMHWyc21Fy7"/>
+    <LombaTemplate id="PidatoArab"    class="cards" namaLomba="PIDATO ARAB" photo={PidatoArab} linkLomba="https://forms.gle/fJXbea5QgEvafgTH9"/>
+    <LombaTemplate id="StoryTelling"  class="cards" namaLomba="STORY TELLING" photo={StoryTelling} linkLomba="https://forms.gle/BHAfiC8U7Nd6eA2A8"/>
+    <LombaTemplate id="RatohJaroe"   class="cards" namaLomba="RATOH JAROE"  photo={RatohJaroe} linkLomba="https://forms.gle/MfqjyM3XqWQuF6Zt7"/>
     <div class="carousel-space"></div>
   </div>
 </div>
 
+<style is:global>
+  /* * {
+    border: 1px solid  red;
+  } */
+  @media only screen and (min-width: 720px) {
+    #RatohJaroe {
+      background: url("../images/bg-lomba/ratoh.png");
+      background-size: 100% 100%;
+    
+    }
+    #EnglishSpeech {
+      background: url("../images/bg-lomba/english.png");
+      background-size: 100% 100%;
+    }
+
+    #Esai {
+      background: url("../images/bg-lomba/esai.png");
+      background-size: 100% 100%;
+    }
+
+    #Futsal {
+      background: url("../images/bg-lomba/futsal.png");
+      background-size: 100% 100%;
+    }
+
+    #Mhq {
+      background: url("../images/bg-lomba/mhq.png");
+      background-size: 100% 100%;
+    }
+
+    #PidatoArab {
+      background: url("../images/bg-lomba/arab.png");
+      background-size: 100% 100%;
+    }
+
+    #StoryTelling {
+      background: url("../images/bg-lomba/story.png");
+      background-size: 100% 100%;
+    }
+
+
+
+
+  }
+
+  @media only screen and (max-width: 720px) {
+    .cards {
+      background: white;
+      background-size: 100% 100%;
+    }
+  }
+</style>
 <style>
   #carousel-container {
     display: flex;
@@ -59,17 +111,6 @@ import Competitions_Title from "../images/titles/comps.png";
     background-color: transparent;
   }
 
-  .carousel-item {
-    width: 40vw;
-    height: 40vh;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-  }
-
   .carousel-item:hover {
     transform: scale(1.2);
   }
@@ -88,6 +129,7 @@ import Competitions_Title from "../images/titles/comps.png";
     window.innerWidth || 0
   );
   if (deviceWidth <= 720) {
+    console.log("Mobile")
     const carouselItems = document.querySelectorAll(".carousel-item");
     // Create an intersection observer to track visibility of elements
     const observer = new IntersectionObserver(
@@ -110,6 +152,7 @@ import Competitions_Title from "../images/titles/comps.png";
       observer.observe(item);
     });
   } else {
+    console.log("PC")
     const slider = document.querySelector("#horizontal-scroll");
     let isDown = false;
     let startX;

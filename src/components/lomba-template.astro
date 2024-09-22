@@ -1,28 +1,33 @@
 ---
-const { namaLomba, photo, linkLomba } = Astro.props;
+const { namaLomba, photo, linkLomba, id } = Astro.props;
 import Image from "astro/components/Image.astro";
 ---
 
-<div class="carousel-item">
+<div class="carousel-item" id={id}>
     <p class="lomba-title mobile">{namaLomba}</p>
     <div class="carousel-item-divider left">
       <Image
         alt="scefMascots"
-        class="carousel-mascots"
+        class="carousel-mascots disnone"
         src={photo}
+      />
+      <Image
+      alt="scefMascots"
+      class="carousel-mascots mobile"
+      src={photo}
       />
     </div>
     <div class="carousel-item-divider right">
-      <div class="scefSignup">
-        <p class="lomba-title pc">{namaLomba}</p>
-        <div class="signup-items">
+      <div class="right-item pc">
+        <p class="lomba-title">{namaLomba}</p>
+      </div>
+      <div class="scefSignup right-item">
           <a href={linkLomba}>
             <button>SIGN UP!</button>
           </a>
           <a href="/Juknis_Scefco.pdf">
             <button class="juknis-button">JUKNIS</button>
           </a>
-        </div>
       </div>
     </div>
 </div>
@@ -67,22 +72,27 @@ import Image from "astro/components/Image.astro";
       background-color: transparent;
     }
 
+
     .carousel-item-divider {
       background-color: transparent;
       width: 50%;
       height: 100%;
       /* border: 3px solid purple; */
       display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .left {
-      width: 35vh;
+      width: 22vw;
     }
 
     .right {
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .right-item {
+      height: 50%;
     }
 
     .carousel-mascots {
@@ -96,28 +106,41 @@ import Image from "astro/components/Image.astro";
       display: flex;
       flex-direction: column;
       background-color: transparent;
-      align-items: center;
+      justify-content: right;
+      height: fit-content;
+      width:  70%;
+      gap: 10px;
     }
+
+    /* .signup-items {
+        display: flex;
+        flex-direction: column;
+        
+      } */
 
     p {
       margin-bottom: 5px;
-      font-size: calc(var(--p-fz) + 1vw);
+      font-size: calc(var(--p-fz) + 2.75vw);
       font-weight: 700;
+      text-align: center;
+      line-height: calc(1.05* calc(var(--p-fz) + 2.75vw));
+      text-shadow: 5px 5px 5px black;
+      color: white;
     }
 
     a {
       width: 100%;
       color: black;
       background: transparent;
-      text-align: center;
+      text-align:end;
     }
 
     button {
-      width: fit-content;
-      color: black;
-      background: transparent;
-      border: 0.75px solid black;
-      border-radius: 9px;
+      width: 100%;
+      color: white;
+      background: #FACD83;
+      border: 0.75px solid transparent;
+      border-radius: 14px;
       font-size: calc(var(--p-fz) + 0.5vw);
       transition: all 0.3s ease;
       padding: 5px;
@@ -133,7 +156,7 @@ import Image from "astro/components/Image.astro";
     }
 
     button:hover {
-      background: black;
+      background: #FFD629;
       color: white;
     }
 
@@ -149,10 +172,9 @@ import Image from "astro/components/Image.astro";
 
     .carousel-item {
       width: 40vw;
-      height: 40vh;
+      height: 25.11vw;
       border: 0.5px solid black;
       border-radius: 10px;
-      background-color: white;
       color: black;
       display: flex;
       justify-content: center;
@@ -180,7 +202,14 @@ import Image from "astro/components/Image.astro";
 
     .mobile {
       display: none;
+      opacity: 1;
     }
+
+    .disnone {
+      display: none;
+    }
+
+    
 
     @media only screen and (max-width: 720px) {
       * {
@@ -207,13 +236,12 @@ import Image from "astro/components/Image.astro";
         flex-direction: column;
         width: 50vw;
         height: 50vh;
+        background-color: white;
       }
 
-      .signup-items {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
+      .scefSignup {
+      margin-bottom: 0%;
+    }
 
       .carousel-space {
         width: 22vw;
