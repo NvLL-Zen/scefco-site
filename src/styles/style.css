@@ -181,7 +181,7 @@ p {
 
 #section-lomba {
     align-items: center;
-    background: linear-gradient(180deg, #FFFFFF 0%,#4BAA8F 2%, #BDF0C6 85%, #3991f2 100%);
+    background: linear-gradient(180deg,#4BAA8F 0%, #BDF0C6 85%, #3991f2 100%);
 }
 
 #tentang-main{
@@ -432,33 +432,37 @@ iframe {
     }
 
     #days {
-        color: #000000;
+        margin-left: 0vw;
+        color: #2d7c5b;
     }
     
     #hours {
-        color: #000000;
+        color: #9c7727;
     }
     
     #minutes {
-        color: #000000;
+        color: #962938;
     }
     
     #seconds {
-        color: #000000;
+        color: hsl(219, 46%, 36%);
     }
 
     
 }
 
 @media only screen and (max-width: 720px) {
+    * {
+        border: 1px solid red;
+    }
 
     #mainDiv {
         background-color: white;
     }
 
     #section-countdown {
-        background-image:url("../images/backgrounds/Footer_BG.jpg");
-        background-size: 100% 45%;
+        background: linear-gradient(90deg,#BDF0C6 20%, #fdfd8e 30% 40%, #ffd8b4 60% 70%, #DCECFC 80%);
+        background-size: 100% 100%;
         background-position: unset;
         height: 45vh;
     }
