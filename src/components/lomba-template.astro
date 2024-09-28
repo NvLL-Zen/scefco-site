@@ -13,7 +13,7 @@ import Image from "astro/components/Image.astro";
       />
       <Image
       alt="scefMascots"
-      class="carousel-mascots mobile"
+      class="carousel-mascots disnone"
       src={photo}
       />
     </div>
@@ -122,10 +122,10 @@ import Image from "astro/components/Image.astro";
 
     p {
       margin-bottom: 5px;
-      font-size: calc(var(--p-fz) + 2.75vw);
+      font-size: calc(var(--p-fz) + 4vw);
       font-weight: 700;
       text-align: center;
-      line-height: calc(1.05* calc(var(--p-fz) + 2.75vw));
+      line-height: calc(1.05* calc(var(--p-fz) + 4vw));
       text-shadow: 2.5px 2.5px 5px #262d83;
       color: white;
     }
@@ -159,6 +159,7 @@ import Image from "astro/components/Image.astro";
 
     button:hover {
       background: #FFD629;
+      cursor: pointer;
       color: white;
     }
 
@@ -223,9 +224,13 @@ import Image from "astro/components/Image.astro";
       }
 
       #horizontal-scroll {
-        height: 65vh;
+        height: 75vh;
         display: flex;
         align-items: center;
+      }
+
+      #carousel-container {
+        height: 75vh;
       }
 
       .carousel-item-divider {
@@ -236,12 +241,13 @@ import Image from "astro/components/Image.astro";
       .right {
         height: 30%;
         justify-content: center;
+        padding-bottom: 2.5vw;
       }
 
       .carousel-item {
         flex-direction: column;
-        width: 50vw;
-        height: 50vh;
+        width: 67.5vw;
+        height: 55vh;
         background: linear-gradient(#6871D4 0%,#748CDF 50%, #80CDC5 100%);
       }
 
@@ -249,9 +255,7 @@ import Image from "astro/components/Image.astro";
       margin-bottom: 0%;
     }
 
-      .carousel-space {
-        width: 22vw;
-      }
+      
 
       .pc {
         display: none;

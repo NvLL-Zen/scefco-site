@@ -149,7 +149,7 @@ p {
     text-align: center;
     align-items: center;
     width: 100%;
-    background-image:url("../images/backgrounds/fourseasons2.jpeg");
+    background-image:url("../images/backgrounds/sc_gradient.jpg");
 
     background-attachment: fixed;
     background-position: center;
@@ -158,7 +158,7 @@ p {
     
     /* font-family: "Red Hat Display", sans-serif; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #section-home {
@@ -327,7 +327,7 @@ p {
 }
 
 #minutes {
-    color: #E3D5C8;
+    color: #ed8a48;
 }
 
 #seconds {
@@ -431,39 +431,21 @@ iframe {
         word-spacing: 2vw;
     }
 
-    #days {
-        margin-left: 0vw;
-        color: #2d7c5b;
-    }
-    
-    #hours {
-        color: #9c7727;
-    }
-    
-    #minutes {
-        color: #962938;
-    }
-    
-    #seconds {
-        color: hsl(219, 46%, 36%);
-    }
-
     
 }
 
 @media only screen and (max-width: 720px) {
-    * {
+    /* * {
         border: 1px solid red;
-    }
+    } */
 
     #mainDiv {
         background-color: white;
     }
 
     #section-countdown {
-        background: linear-gradient(90deg,#BDF0C6 20%, #fdfd8e 30% 40%, #ffd8b4 60% 70%, #DCECFC 80%);
-        background-size: 100% 100%;
-        background-position: unset;
+        background-size: 100% 45%;
+        background-position: inherit;
         height: 45vh;
     }
 
@@ -522,7 +504,7 @@ iframe {
         display: none;
         flex-direction: column;
         position: fixed;
-        margin-top: clamp(50px, 7.5vh, 100px);
+        margin-top: 50px;
         width: 100vw;
         height: 25vh;
         background-color: white;
