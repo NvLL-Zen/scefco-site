@@ -450,8 +450,8 @@ iframe {
     }
 
     #section-countdown {
-        background-size: 100% 45%;
-        background-position: inherit;
+        background-size: 100% 45vh;
+        background-position:top;
         height: 45vh;
     }
 
