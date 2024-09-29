@@ -186,6 +186,7 @@ p {
 
 #section-lomba {
     align-items: center;
+    border-top: 10px solid white;
     background: linear-gradient(180deg,#4BAA8F 0%, #BDF0C6 85%, #3991f2 100%);
 }
 
