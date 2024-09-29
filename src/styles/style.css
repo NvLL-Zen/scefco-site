@@ -52,6 +52,11 @@ h1 {
     font-weight: 900;
 }
 
+#announce {
+    color: white;
+    text-shadow: 3px 3px 5px black;
+}
+
 h2 {
     font-size: var(--h2-fz);
 }

@@ -25,4 +25,4 @@ function countdown() {
 }
 
 countdown();
-const x = setInterval(countdown, 1);
+const x = setInterval(countdown, 1000);

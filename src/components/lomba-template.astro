@@ -122,10 +122,10 @@ import Image from "astro/components/Image.astro";
 
     p {
       margin-bottom: 5px;
-      font-size: calc(var(--p-fz) + 4vw);
+      font-size: calc(var(--p-fz) + 2.75vw);
       font-weight: 700;
       text-align: center;
-      line-height: calc(1.05* calc(var(--p-fz) + 4vw));
+      line-height: calc(1.05* calc(var(--p-fz) + 2.75vw));
       text-shadow: 2.5px 2.5px 5px #262d83;
       color: white;
     }
@@ -221,6 +221,11 @@ import Image from "astro/components/Image.astro";
     @media only screen and (max-width: 720px) {
       * {
         /* border: 1px solid red; */
+      }
+
+      p {
+        font-size: calc(var(--p-fz) + 5vw);
+        line-height: calc(1.05* calc(var(--p-fz) + 5vw));
       }
 
       #horizontal-scroll {
