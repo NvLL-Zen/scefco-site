@@ -274,6 +274,7 @@ p {
     height: 15vw;
     align-self: left;
     background-size: cover;
+    border-radius: 12px;
 }
 
 #tentang-title {
@@ -285,7 +286,7 @@ p {
     height: 200vh;
     /* background-image: url("../images/backgrounds/trailer_tentang.png"); */
     background-size: 100% 100%;
-    background: linear-gradient(180deg, #3991f2 0%,#ACE9FF 100%);
+    background: linear-gradient(180deg, #3991f2 0%,#ACE9FF 90%, #DCECFC 100%);
 }
 
 #section-trailer {
@@ -341,7 +342,7 @@ p {
 }
 
 .Footer {
-    background: linear-gradient(180deg, #ACE9FF 5%, #DCECFC 75%);
+    background: #DCECFC;
     background-size: 100% 100%;
     height: 55vh;
     width: 100%;
@@ -462,7 +463,7 @@ iframe {
     #section-tentang-trailer {
         align-items: flex-start;
         justify-content: flex-start;
-        height: 120vh;
+        height: 85vh;
     }
 
     #trailer-main {
@@ -486,7 +487,7 @@ iframe {
 
     #tentang-main {
         width: 100vw;
-        height: 50vh;
+        height: 25vh;
     }
 
     #tentang-photo {
@@ -500,6 +501,7 @@ iframe {
     #sc-pic {
         width: 40vw;
         height: 40vw;
+        border-radius: 12px;
     }
 
     #navHolder {
