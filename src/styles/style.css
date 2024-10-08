@@ -20,7 +20,7 @@ body {
     margin: 0;
     padding: 0;
     color: black;
-    border: 0.1px solid red; 
+    /* border: 0.1px solid red;  */
     font-family: "Poppins";
     width: fit-content;
 }
@@ -181,7 +181,7 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    padding-top: 2.5vw;
+    margin-top: 2.5vh;
 }
 
 #section-lomba {
@@ -260,7 +260,7 @@ p {
 #trailer-title {
     width: 30vw;
     height: 15vw;
-    margin-top: 2.5vw;
+    margin-top: 2.5vh;
     margin-bottom: 2.5vw;
 }
 
@@ -512,13 +512,17 @@ iframe {
     #section-trailer {
         height: 40vh;
     }
+    
+    #section-tentang {
+        margin-top: 0vh;
+    }
 
     #tentang-main {
         width: 100vw;
-        height: 15vh;
     }
 
     #tentang-photo {
+        margin-top: 5vh;
         justify-content: center;
         width: 100vw;
         height: 30vh;
