@@ -20,7 +20,7 @@ body {
     margin: 0;
     padding: 0;
     color: black;
-    /* border: 0.1px solid red;  */
+    border: 0.1px solid red; 
     font-family: "Poppins";
     width: fit-content;
 }
@@ -515,11 +515,10 @@ iframe {
 
     #tentang-main {
         width: 100vw;
-        height: 25vh;
+        height: 15vh;
     }
 
     #tentang-photo {
-        margin-top: 5vw;
         justify-content: center;
         width: 100vw;
         height: 30vh;
