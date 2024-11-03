@@ -52,9 +52,13 @@ h1 {
     font-weight: 900;
 }
 
-#announce {
+.announce {
     color: white;
     text-shadow: 3px 3px 5px black;
+}
+
+.now {
+    font-size: 7.5vw;
 }
 
 h2 {
@@ -303,7 +307,7 @@ p {
 #timer {
     word-spacing: 3vw;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
